@@ -1650,6 +1650,10 @@ h3 { font-size: var(--fs-h3); letter-spacing: -0.015em; line-height: 1.15; }
 }
 .agenda__nav-item.is-active { color: var(--coral); }
 .agenda__nav-item svg { width: 18px; height: 18px; }
+/* Marketing IA gets a permanent coral tint even when not active —
+   it's the differentiator we promote on the landing. */
+.agenda__nav-item--marketing { color: var(--coral); }
+.agenda__nav-item--marketing svg { color: var(--coral); }
 
 /* ============================================================
    WhatsAppScreen

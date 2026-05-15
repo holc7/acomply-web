@@ -1,5 +1,9 @@
 // Multi-vertical agenda mockup for the hero phone. Rotates services across
 // barber/salon/nails/spa/clinic to telegraph "works for everyone."
+// Bottom-nav promotes Marketing IA (our differentiator) — owners don't pick
+// Acomply for a clients-list tab; they pick it for the AI agents.
+
+import SparkleIcon from "../primitives/SparkleIcon";
 
 const AGENDA_ROWS: ReadonlyArray<{
   time: string;
@@ -89,13 +93,13 @@ export default function AgendaScreen({ withToast = true }: { withToast?: boolean
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0114 0M17 11a3 3 0 100-6M23 21a7 7 0 00-5-6.7"/></svg>
           Clientes
         </div>
-        <div className="agenda__nav-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M5 9h11a3 3 0 010 6H7a3 3 0 000 6h12"/></svg>
-          Cobros
+        <div className="agenda__nav-item agenda__nav-item--marketing">
+          <SparkleIcon size={18} color="currentColor" />
+          Marketing IA
         </div>
         <div className="agenda__nav-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5A8.5 8.5 0 0121 11v.5z"/></svg>
-          WhatsApp
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          Más
         </div>
       </div>
     </div>
