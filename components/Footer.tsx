@@ -22,9 +22,9 @@ const FOOTER_COLS = [
   {
     head: "Legal",
     links: [
-      { label: "Términos de uso", href: "/terminos" },
-      { label: "Política de privacidad", href: "/privacidad" },
-      { label: "Habeas Data (Ley 1581)", href: "/privacidad#habeas-data" },
+      { label: "Términos de uso", href: "/terms" },
+      { label: "Política de privacidad", href: "/privacy" },
+      { label: "Habeas Data (Ley 1581)", href: "/privacy#habeas-data" },
       { label: "Política de cookies", href: "/cookies" },
     ],
   },
@@ -83,8 +83,8 @@ export default function Footer() {
           Todos los derechos reservados
         </span>
         <div className="footer__bottom-row">
-          <a href="/privacidad">Privacidad</a>
-          <a href="/terminos">Términos</a>
+          <a href="/privacy">Privacidad</a>
+          <a href="/terms">Términos</a>
           <a href="/cookies">Cookies</a>
         </div>
       </div>

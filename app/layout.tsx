@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Sora, Nunito } from "next/font/google";
+import CookieBanner from "@/components/CookieBanner";
 import "./globals.css";
 
 const sora = Sora({
@@ -49,7 +50,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es-CO" className={`${sora.variable} ${nunito.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <CookieBanner />
+      </body>
     </html>
   );
 }

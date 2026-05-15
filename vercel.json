@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    {
+      "source": "/((?!_next/|api/|precios$|empresa$|blog|privacy$|terms$|cookies$|favicon\\.ico|sitemap\\.xml|robots\\.txt|acomply-icon\\.png|acomply-wordmark\\.png).+)",
+      "destination": "https://app.acomply.co/$1"
+    }
+  ]
+}
