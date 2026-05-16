@@ -36,6 +36,10 @@
   /* Gradients — LOCKED. 3-stop CTA. */
   --grad-cta:       linear-gradient(96deg, #E86C57 0%, #F08A52 45%, #F5B44B 100%);
   --grad-cta-hover: linear-gradient(96deg, #EC7259 0%, #F39456 45%, #F8BD52 100%);
+  /* 90deg variant for inline pill CTAs that need a perfectly-horizontal sweep
+     (ClosingCTA primary button, Marketing-IA in-phone CTA). Same color stops. */
+  --grad-cta-90:       linear-gradient(90deg, #E86C57 0%, #F08A52 45%, #F5B44B 100%);
+  --grad-cta-90-hover: linear-gradient(90deg, #EC7259 0%, #F39456 45%, #F8BD52 100%);
 
   /* Canonical brand gradient — coral → amber → mint, 3 stops */
   --grad-brand:        linear-gradient(90deg, #E86C57 0%, #F5B44B 50%, #8DDACB 100%);

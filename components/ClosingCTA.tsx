@@ -155,7 +155,7 @@ const ClosingCTA: React.FC<ClosingCTASectionProps> = ({
       }
       .ccta__btn:active { transform: translateY(0); }
       .ccta__btn--primary {
-        background: linear-gradient(90deg, #E86C57 0%, #F08A52 45%, #F5B44B 100%);
+        background: var(--grad-cta-90);
         color: #FFFFFF;
         border: 0;
         padding-left: 9px;
@@ -166,7 +166,7 @@ const ClosingCTA: React.FC<ClosingCTASectionProps> = ({
           inset 0 1px 0 rgba(255, 255, 255, 0.24);
       }
       .ccta__btn--primary:hover {
-        background: linear-gradient(90deg, #EC7259 0%, #F39456 45%, #F8BD52 100%);
+        background: var(--grad-cta-90-hover);
         transform: translateY(-1px);
         box-shadow:
           0 20px 42px rgba(232, 108, 87, 0.30),

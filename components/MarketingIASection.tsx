@@ -464,7 +464,7 @@ export default function MarketingIASection() {
         .mia__detail-val small { display: block; font-size: 9.5px; font-weight: 600; color: rgba(43, 33, 28, 0.5); }
 
         .mia__cta {
-          background: linear-gradient(90deg, #E86C57 0%, #F08A52 45%, #F5B44B 100%);
+          background: var(--grad-cta-90);
           color: #FFF6EE;
           font-family: var(--font-text, 'Nunito', system-ui, sans-serif);
           font-size: 12.5px;
