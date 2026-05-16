@@ -1,5 +1,5 @@
 import { WA_LINK } from "../lib/copy";
-import SparkleIcon from "./primitives/SparkleIcon";
+import AcomplyLogo from "./primitives/AcomplyLogo";
 
 const FOOTER_COLS = [
   {
@@ -45,20 +45,12 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <div className="footer__brand-block">
-          <a className="footer__brand" href="#top">
-            <span className="footer__brand-mark">
-              <span>A</span>
-              <span className="footer__brand-mark-spark"><SparkleIcon size={9} color="var(--coral)" /></span>
-            </span>
-            Acomply
+          <a className="footer__brand" href="#top" aria-label="Acomply — Inicio">
+            <AcomplyLogo height={56} title="Acomply" />
           </a>
           <p className="footer__tagline">
-            Tu negocio, siempre acompañado. Reservas, clientes, pagos, WhatsApp e IA en una sola plataforma.
+            Acomply acompaña tu operación diaria: reservas, clientes, pagos, WhatsApp e IA en una sola plataforma para negocios de servicio.
           </p>
-          <span className="footer__location">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s-8-8-8-13a8 8 0 0116 0c0 5-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg>
-            Hecho en Medellín, Colombia
-          </span>
         </div>
 
         <div className="footer__cols">

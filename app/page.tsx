@@ -3,12 +3,14 @@
 import { useEffect } from "react";
 import NavBar from "@/components/NavBar";
 import HeroSection from "@/components/HeroSection";
-import VerticalRotator from "@/components/VerticalRotator";
+import VerticalProofSection from "@/components/VerticalProofSection";
 import AgentsSection from "@/components/AgentsSection";
-import OutcomesStrip from "@/components/OutcomesStrip";
+import AgentsSectionV2 from "@/components/AgentsSectionV2";
+import MarketingIASection from "@/components/MarketingIASection";
+import AsistenteAnalisisSection from "@/components/AsistenteAnalisisSection";
+import ResultadosSection from "@/components/ResultadosSection";
 import PricingCards from "@/components/PricingCards";
 import RecargasTeaser from "@/components/RecargasTeaser";
-import TrustStrip from "@/components/TrustStrip";
 import FAQ from "@/components/FAQ";
 import ClosingCTA from "@/components/ClosingCTA";
 import Footer from "@/components/Footer";
@@ -37,12 +39,14 @@ export default function Home() {
       <NavBar />
       <main>
         <HeroSection />
-        <VerticalRotator />
+        <VerticalProofSection />
         <AgentsSection />
-        <OutcomesStrip />
+        <AgentsSectionV2 />
+        <MarketingIASection />
+        <AsistenteAnalisisSection />
+        <ResultadosSection />
         <PricingCards />
         <RecargasTeaser />
-        <TrustStrip />
         <FAQ />
         <ClosingCTA />
       </main>

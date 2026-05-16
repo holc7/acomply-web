@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://acomply.co"),
   title: "Acomply — Tu negocio, siempre acompañado.",
   description:
-    "Acomply te acompaña para que tu negocio fluya y crezca. Reservas, clientes, pagos, WhatsApp e IA en una sola plataforma. Hecho en Medellín.",
+    "Acomply acompaña tu operación diaria: reservas, clientes, pagos, WhatsApp e IA en una sola plataforma para negocios de servicio.",
   openGraph: {
     title: "Acomply — Tu negocio, siempre acompañado.",
     description:
-      "Reservas, clientes, pagos, WhatsApp e IA en una sola plataforma. Hecho en Medellín, para Colombia.",
+      "Reservas, clientes, pagos, WhatsApp e IA en una sola plataforma para negocios de servicio.",
     locale: "es_CO",
     type: "website",
     siteName: "Acomply",

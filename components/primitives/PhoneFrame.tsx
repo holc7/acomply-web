@@ -9,8 +9,20 @@ type Props = {
 export default function PhoneFrame({ time = "9:41", children, style }: Props) {
   return (
     <div className="phone" style={style}>
-      <div className="phone__notch" />
+      {/* Side buttons — left silent toggle + 2 volume, right power */}
+      <span className="phone__btn phone__btn--silent" aria-hidden="true" />
+      <span className="phone__btn phone__btn--vol-up" aria-hidden="true" />
+      <span className="phone__btn phone__btn--vol-down" aria-hidden="true" />
+      <span className="phone__btn phone__btn--power" aria-hidden="true" />
+
+      {/* Polished metallic rim highlight */}
+      <span className="phone__rim" aria-hidden="true" />
+
+      <div className="phone__notch">
+        <span className="phone__notch-cam" aria-hidden="true" />
+      </div>
       <div className="phone__screen">
+        <span className="phone__glare" aria-hidden="true" />
         <div className="phone__statusbar">
           <span>{time}</span>
           <span className="phone__status-right">
