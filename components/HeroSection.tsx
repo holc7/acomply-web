@@ -2,6 +2,7 @@
 // Two-column hero. Phone in right column with two floating cards layered around it:
 // WhatsApp reminder (top-left) + IA de Acomply suggestion (bottom-right).
 
+import { CTA_DEMO, DEMO_HREF } from "../lib/copy";
 import Button from "./primitives/Button";
 import PhoneFrame from "./primitives/PhoneFrame";
 import SparkleIcon from "./primitives/SparkleIcon";
@@ -26,7 +27,7 @@ export default function HeroSection() {
           </p>
 
           <div className="hero__ctas">
-            <Button variant="primary" size="lg" href="#demo">Agenda una demo gratis</Button>
+            <Button variant="primary" size="lg" href={DEMO_HREF}>{CTA_DEMO}</Button>
             <a className="hero__demo-link" href="#agentes">
               <span className="hero__demo-play" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">

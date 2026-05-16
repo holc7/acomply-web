@@ -1,3 +1,4 @@
+import { WA_LINK } from "../lib/copy";
 import SparkleIcon from "./primitives/SparkleIcon";
 
 const FOOTER_COLS = [
@@ -32,7 +33,7 @@ const FOOTER_COLS = [
     head: "Soporte",
     links: [
       { label: "Centro de ayuda", href: "#" },
-      { label: "WhatsApp", href: "https://wa.me/573000000000" },
+      { label: "WhatsApp", href: WA_LINK },
       { label: "acomplyinfo@gmail.com", href: "mailto:acomplyinfo@gmail.com" },
       { label: "Estado del sistema", href: "#" },
     ],

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { CTA_DEMO, DEMO_HREF } from "../lib/copy";
 import Button from "./primitives/Button";
 import SparkleIcon from "./primitives/SparkleIcon";
 
@@ -48,7 +49,7 @@ export default function NavBar() {
 
         <div className="nav__cta-wrap">
           <div className="nav__cta-desktop">
-            <Button variant="primary" size="sm" href="#demo">Agenda una demo gratis</Button>
+            <Button variant="primary" size="sm" href={DEMO_HREF}>{CTA_DEMO}</Button>
           </div>
           <button
             className="nav__menu-btn"
@@ -78,8 +79,8 @@ export default function NavBar() {
           <a key={l.href} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
         ))}
         <div className="nav__drawer-cta">
-          <Button variant="primary" full href="#demo" onClick={() => setOpen(false)}>
-            Agenda una demo gratis
+          <Button variant="primary" full href={DEMO_HREF} onClick={() => setOpen(false)}>
+            {CTA_DEMO}
           </Button>
         </div>
       </div>

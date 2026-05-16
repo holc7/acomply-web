@@ -8,6 +8,7 @@
    ============================================================ */
 
 import * as React from 'react';
+import { CTA_DEMO, WA_LINK } from '../lib/copy';
 import SparkleIcon from './primitives/SparkleIcon';
 import CheckIcon from './primitives/icons/CheckIcon';
 
@@ -20,7 +21,7 @@ interface ClosingCTASectionProps {
 const ClosingCTA: React.FC<ClosingCTASectionProps> = ({
   bgSrc = '/assets/closing-cta-bg.webp',
   primaryHref = '#signup',
-  whatsappHref = 'https://wa.me/573000000000',
+  whatsappHref = WA_LINK,
 }) => (
   <section
     className="ccta"
@@ -48,7 +49,7 @@ const ClosingCTA: React.FC<ClosingCTASectionProps> = ({
           <span className="ccta__btn-spark" aria-hidden="true">
             <SparkleIcon size={21} color="currentColor" />
           </span>
-          Agenda una demo gratis
+          {CTA_DEMO}
         </a>
         <a className="ccta__btn ccta__btn--secondary" href={whatsappHref}>
           Habla por WhatsApp
