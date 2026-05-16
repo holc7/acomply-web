@@ -4,6 +4,9 @@
 // Acomply for a clients-list tab; they pick it for the AI agents.
 
 import SparkleIcon from "../primitives/SparkleIcon";
+import CalendarIcon from "../primitives/icons/CalendarIcon";
+import PeopleIcon from "../primitives/icons/PeopleIcon";
+import WhatsAppIcon from "../primitives/icons/WhatsAppIcon";
 
 const AGENDA_ROWS: ReadonlyArray<{
   time: string;
@@ -75,7 +78,7 @@ export default function AgendaScreen({ withToast = true }: { withToast?: boolean
         {withToast && (
           <div className="agenda__toast">
             <div className="agenda__toast-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M20.5 3.5A11.5 11.5 0 002.6 17.2L1 23l5.9-1.6A11.5 11.5 0 1020.5 3.5zM12 21.2a9.2 9.2 0 01-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9.3 9.3 0 1112 21.2z"/></svg>
+              <WhatsAppIcon size={14} color="#fff" />
             </div>
             <div className="agenda__toast-text">
               <strong>Recepcionista IA</strong> agendó a Diego L. · 14:15
@@ -86,11 +89,11 @@ export default function AgendaScreen({ withToast = true }: { withToast?: boolean
 
       <div className="agenda__nav">
         <div className="agenda__nav-item is-active">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M3 10h18M8 2v4M16 2v4"/></svg>
+          <CalendarIcon />
           Agenda
         </div>
         <div className="agenda__nav-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0114 0M17 11a3 3 0 100-6M23 21a7 7 0 00-5-6.7"/></svg>
+          <PeopleIcon variant="group" />
           Clientes
         </div>
         <div className="agenda__nav-item agenda__nav-item--marketing">

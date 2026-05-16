@@ -2,10 +2,7 @@
 
 import type { ReactNode } from "react";
 import PhoneFrame from "./primitives/PhoneFrame";
-
-const Check = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5 9-11"/></svg>
-);
+import CheckIcon from "./primitives/icons/CheckIcon";
 
 type Color = "coral" | "amber" | "mint";
 
@@ -51,7 +48,7 @@ export default function AgentVignette({
             <ul className="vign__features" role="list">
               {features.map((f, i) => (
                 <li key={i} className="vign__feature">
-                  <span className="vign__feature-icon"><Check /></span>
+                  <span className="vign__feature-icon"><CheckIcon variant="swoop" strokeWidth={3} /></span>
                   <span>{f}</span>
                 </li>
               ))}
