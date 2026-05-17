@@ -1,12 +1,7 @@
-// Multi-vertical agenda mockup for the hero phone. Rotates services across
-// barber/salon/nails/spa/clinic to telegraph "works for everyone."
-// Bottom-nav promotes Marketing IA (our differentiator) — owners don't pick
-// Acomply for a clients-list tab; they pick it for the AI agents.
+// Multi-vertical agenda widget for the hero. Keep it product-real, but less
+// literal than a full phone screen so it reads as a premium hero card first.
 
-import SparkleIcon from "../primitives/SparkleIcon";
 import CalendarIcon from "../primitives/icons/CalendarIcon";
-import PeopleIcon from "../primitives/icons/PeopleIcon";
-import WhatsAppIcon from "../primitives/icons/WhatsAppIcon";
 
 const AGENDA_ROWS: ReadonlyArray<{
   time: string;
@@ -38,9 +33,14 @@ export default function AgendaScreen({ withToast = true }: { withToast?: boolean
   return (
     <div className="agenda">
       <div className="agenda__topbar">
-        <div className="agenda__title">
-          <small>Miércoles · Hoy</small>
-          14 de mayo
+        <div className="agenda__title-wrap">
+          <span className="agenda__title-icon" aria-hidden="true">
+            <CalendarIcon />
+          </span>
+          <div className="agenda__title">
+            Agenda de hoy
+            <small>20 de mayo, 2024</small>
+          </div>
         </div>
         <span className="agenda__chip">
           <span className="agenda__chip-dot" />
@@ -48,17 +48,8 @@ export default function AgendaScreen({ withToast = true }: { withToast?: boolean
         </span>
       </div>
 
-      <div className="agenda__days">
-        {DAYS.map((d, i) => (
-          <div key={i} className={`agenda__day${d.today ? " is-today" : ""}`}>
-            {d.d}
-            <span className="agenda__day-num">{d.n}</span>
-          </div>
-        ))}
-      </div>
-
       <div className="agenda__list">
-        {AGENDA_ROWS.map((r, i) => (
+        {AGENDA_ROWS.slice(0, 3).map((r, i) => (
           <div key={i} className="agenda__row">
             <span className="agenda__time">{r.time}</span>
             <span className={`agenda__avatar agenda__avatar-${r.avatar}`}>{r.init}</span>
@@ -77,33 +68,16 @@ export default function AgendaScreen({ withToast = true }: { withToast?: boolean
 
         {withToast && (
           <div className="agenda__toast">
-            <div className="agenda__toast-icon">
-              <WhatsAppIcon size={14} color="#fff" />
-            </div>
+            <div className="agenda__toast-icon">IA</div>
             <div className="agenda__toast-text">
-              <strong>Recepcionista IA</strong> agendó a Diego L. · 14:15
+              <strong>Recepcionista IA</strong> confirmó la mañana automáticamente
             </div>
           </div>
         )}
       </div>
 
-      <div className="agenda__nav">
-        <div className="agenda__nav-item is-active">
-          <CalendarIcon />
-          Agenda
-        </div>
-        <div className="agenda__nav-item">
-          <PeopleIcon variant="group" />
-          Clientes
-        </div>
-        <div className="agenda__nav-item agenda__nav-item--marketing">
-          <SparkleIcon size={18} color="currentColor" />
-          Marketing IA
-        </div>
-        <div className="agenda__nav-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          Más
-        </div>
+      <div className="agenda__footer">
+        Ver más citas
       </div>
     </div>
   );

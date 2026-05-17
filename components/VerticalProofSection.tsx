@@ -134,11 +134,6 @@ export default function VerticalProofSection() {
     <section className="vprof" id="verticales">
       <div className="vprof__inner">
         <div className="vprof__head">
-          <span className="vprof__pill">
-            <SparkleIcon size={12} color="currentColor" />
-            Multi-vertical
-          </span>
-
           <h2 className="vprof__h1">
             Hecho para <em>tu industria.</em>
           </h2>

@@ -93,14 +93,21 @@ export default function HeroSection() {
               <span className="hero__wa-icon">
                 <WhatsAppIcon size={18} color="#fff" />
               </span>
-              <span className="hero__floating-app">WhatsApp</span>
-              <span className="hero__floating-when">Ahora</span>
+              <div className="hero__wa-copy">
+                <div className="hero__wa-title">Recordatorio enviado</div>
+                <div className="hero__wa-body">
+                  Se envio recordatorio por
+                  <br />WhatsApp a Camila R.
+                </div>
+              </div>
             </div>
-            <div className="hero__floating-title">Hola Andrés <span aria-hidden="true">👋</span></div>
-            <div className="hero__floating-body">
-              Te recordamos tu cita hoy a las <strong>9:00 a. m.</strong>
+            <div className="hero__wa-meta">
+              <span className="hero__wa-status">
+                <span className="hero__wa-check" aria-hidden="true">✓</span>
+                Entregado
+              </span>
+              <span className="hero__wa-time">10:30 a. m.</span>
             </div>
-            <a className="hero__wa-reply" href="#">Responder</a>
           </div>
 
           {/* Floating IA suggestion card — bottom-right of phone */}
@@ -124,30 +131,6 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Floating stat card — Recordatorios IA enviados hoy */}
-          <div className="hero__floating hero__floating--stat" aria-hidden="true">
-            <div className="hero__stat-head">
-              <span className="hero__stat-icon">
-                <BarChartIcon />
-              </span>
-              <span className="hero__stat-label">Recordatorios IA · hoy</span>
-            </div>
-            <div className="hero__stat-row">
-              <span className="hero__stat-num">47</span>
-              <span className="hero__stat-delta">↑ 18%</span>
-            </div>
-            <svg className="hero__stat-spark" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true">
-              <path
-                d="M0 18 L14 14 L28 16 L42 10 L56 12 L70 6 L84 8 L100 2"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <circle cx="100" cy="2" r="2.5" fill="currentColor" />
-            </svg>
-          </div>
         </div>
       </div>
     </section>

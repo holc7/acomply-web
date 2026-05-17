@@ -86,6 +86,14 @@ export default function AgentsSectionV2() {
 
   return (
     <section className="agv2" aria-label="Agentes IA">
+      <img
+        className="agv2__phone"
+        src="/assets/agents-phone.webp"
+        alt="Acomply en iPhone — panel de Resumen del día con ingresos, ocupación y tendencia"
+        loading="lazy"
+        width={1254}
+        height={1254}
+      />
       <div className="agv2__inner">
         <div className="agv2__timeline">
           {STEPS.map((s, i) => (
@@ -145,13 +153,36 @@ export default function AgentsSectionV2() {
           padding-inline: clamp(1.25rem, 5vw, 2rem);
         }
 
+        /* Phone illustration — inline above timeline on mobile, absolute-
+           positioned on the left half on desktop so the timeline column
+           breathes on the right. */
+        .agv2__phone {
+          display: block;
+          width: 100%;
+          max-width: 280px;
+          height: auto;
+          margin: 0 auto clamp(2rem, 5vw, 3rem);
+        }
+        @media (min-width: 980px) {
+          .agv2__phone {
+            position: absolute;
+            left: clamp(1rem, 4vw, 4rem);
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: clamp(320px, 30vw, 440px);
+            margin: 0;
+            z-index: 1;
+            pointer-events: none;
+          }
+        }
+
         .agv2__timeline {
           position: relative;
           width: 100%;
           padding: 10px 0;
         }
         /* Desktop: timeline pinned to right half so it doesn't overlap the
-           phone bg-image on the left. */
+           phone illustration on the left. */
         @media (min-width: 980px) {
           .agv2__timeline {
             margin-left: auto;
