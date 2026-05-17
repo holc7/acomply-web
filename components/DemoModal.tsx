@@ -5,6 +5,7 @@
 
 import { useEffect, useState } from "react";
 import Button from "./primitives/Button";
+import CheckIcon from "./primitives/icons/CheckIcon";
 
 type Props = {
   open: boolean;
@@ -90,7 +91,7 @@ export default function DemoModal({ open, onClose }: Props) {
         {status === "success" ? (
           <div className="demomodal__success">
             <span className="demomodal__success-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12l5 5 9-11"/></svg>
+              <CheckIcon variant="swoop" strokeWidth={2.4} />
             </span>
             <div className="demomodal__success-title">¡Recibido!</div>
             <p className="demomodal__success-sub">
@@ -158,7 +159,7 @@ export default function DemoModal({ open, onClose }: Props) {
             </div>
 
             <div className="demomodal__micro">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              <CheckIcon variant="tick" strokeWidth={2.4} />
               Sin tarjeta · Respuesta en menos de 24 h
             </div>
           </form>

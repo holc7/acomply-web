@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { CTA_DEMO, DEMO_HREF } from "../lib/copy";
 import Button from "./primitives/Button";
 
 export default function StickyMobileCTA() {
@@ -21,8 +22,8 @@ export default function StickyMobileCTA() {
   return (
     <div className={`stickycta${visible ? " is-visible" : ""}`}>
       <div className="stickycta__row">
-        <Button variant="primary" href="#demo" sparkle>
-          Agenda una demo gratis
+        <Button variant="primary" href={DEMO_HREF} sparkle>
+          {CTA_DEMO}
         </Button>
       </div>
     </div>

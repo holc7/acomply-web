@@ -1,5 +1,7 @@
 // Three trust pillars: Pagos · WhatsApp · Privacidad.
 
+import WhatsAppIcon from "./primitives/icons/WhatsAppIcon";
+
 export default function TrustStrip() {
   return (
     <section className="trust" aria-label="Seguridad y cumplimiento">
@@ -25,7 +27,7 @@ export default function TrustStrip() {
 
         <div className="trust__pillar">
           <span className="trust__pillar-eyebrow">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.5 11.5 0 002.6 17.2L1 23l5.9-1.6A11.5 11.5 0 1020.5 3.5zM12 21.2a9.2 9.2 0 01-4.7-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9.3 9.3 0 1112 21.2z"/></svg>
+            <WhatsAppIcon />
             WhatsApp
           </span>
           <h3 className="trust__pillar-headline">
