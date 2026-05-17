@@ -7,6 +7,7 @@ import Button from "./primitives/Button";
 import SparkleIcon from "./primitives/SparkleIcon";
 import BarChartIcon from "./primitives/icons/BarChartIcon";
 import WhatsAppIcon from "./primitives/icons/WhatsAppIcon";
+import AgendaScreen from "./screens/AgendaScreen";
 
 export default function HeroSection() {
   return (
@@ -66,6 +67,14 @@ export default function HeroSection() {
         </div>
 
         <div className="hero__phone-wrap">
+          {/* Concentric dotted rings — focal "target" backdrop */}
+          <div className="hero__rings" aria-hidden="true">
+            <span className="hero__ring hero__ring--4" />
+            <span className="hero__ring hero__ring--3" />
+            <span className="hero__ring hero__ring--2" />
+            <span className="hero__ring hero__ring--1" />
+          </div>
+
           <div className="hero__phone-deco hero__phone-deco--coral" aria-hidden="true">
             <SparkleIcon size={28} color="currentColor" />
           </div>
@@ -73,16 +82,9 @@ export default function HeroSection() {
             <SparkleIcon size={18} color="currentColor" />
           </div>
 
-          <div className="hero__phone">
-            <img
-              src="/assets/hero-phone.webp"
-              alt="Acomply en iPhone — agenda, clientes y agentes IA"
-              width={1024}
-              height={1024}
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-            />
+          {/* Anchor card — full agenda screen rendered as a floating card */}
+          <div className="hero__card-agenda">
+            <AgendaScreen withToast={false} />
           </div>
 
           {/* Floating WhatsApp reminder card — top-left of phone */}
@@ -120,6 +122,31 @@ export default function HeroSection() {
                 <BarChartIcon />
               </span>
             </div>
+          </div>
+
+          {/* Floating stat card — Recordatorios IA enviados hoy */}
+          <div className="hero__floating hero__floating--stat" aria-hidden="true">
+            <div className="hero__stat-head">
+              <span className="hero__stat-icon">
+                <BarChartIcon />
+              </span>
+              <span className="hero__stat-label">Recordatorios IA · hoy</span>
+            </div>
+            <div className="hero__stat-row">
+              <span className="hero__stat-num">47</span>
+              <span className="hero__stat-delta">↑ 18%</span>
+            </div>
+            <svg className="hero__stat-spark" viewBox="0 0 100 24" preserveAspectRatio="none" aria-hidden="true">
+              <path
+                d="M0 18 L14 14 L28 16 L42 10 L56 12 L70 6 L84 8 L100 2"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <circle cx="100" cy="2" r="2.5" fill="currentColor" />
+            </svg>
           </div>
         </div>
       </div>

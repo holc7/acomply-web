@@ -85,18 +85,7 @@ export default function AgentsSectionV2() {
   const [selectedIdx, setSelectedIdx] = useState(0);
 
   return (
-    <section className="agv2" aria-label="Agentes IA — preview V2">
-      <div className="agv2__preview-banner">PREVIEW v2 — port of Codex HTML</div>
-      {/* Mobile-only: phone as inline image (stacks above timeline).
-          Desktop: phone is rendered as section background-image, see CSS. */}
-      <img
-        className="agv2__phone-img-mobile"
-        src="/assets/agents-phone-recepcionista.webp"
-        alt="iPhone mostrando Recepcionista IA en WhatsApp confirmando una cita en Barbería 1987 con servicio, fecha, hora, barbero y sucursal."
-        loading="lazy"
-        width="1024"
-        height="1536"
-      />
+    <section className="agv2" aria-label="Agentes IA">
       <div className="agv2__inner">
         <div className="agv2__timeline">
           {STEPS.map((s, i) => (
@@ -148,45 +137,6 @@ export default function AgentsSectionV2() {
             radial-gradient(circle at 92% 10%, rgba(141, 218, 203, 0.18), transparent 8rem),
             radial-gradient(circle at 9% 84%, rgba(232, 108, 87, 0.14), transparent 12rem),
             linear-gradient(112deg, #fcf5e9 0%, #fdf1df 48%, #fbf4e8 100%);
-        }
-        /* Desktop: phone WebP becomes the left half of the section bg.
-           Pure background — no bounding box visible, no white square edges. */
-        @media (min-width: 980px) {
-          .agv2 {
-            background-image:
-              url("/assets/agents-phone-recepcionista.webp"),
-              radial-gradient(circle at 92% 10%, rgba(141, 218, 203, 0.18), transparent 8rem),
-              radial-gradient(circle at 9% 84%, rgba(232, 108, 87, 0.14), transparent 12rem),
-              linear-gradient(112deg, #fcf5e9 0%, #fdf1df 48%, #fbf4e8 100%);
-            background-position: 4% center, 0 0, 0 0, 0 0;
-            background-size: auto clamp(420px, 62%, 680px), auto, auto, auto;
-            background-repeat: no-repeat;
-          }
-        }
-        /* Mobile inline phone image — visible only when bg-image is off */
-        .agv2__phone-img-mobile {
-          display: block;
-          width: 100%;
-          max-width: 360px;
-          height: auto;
-          margin: 0 auto clamp(2rem, 5vw, 3rem);
-        }
-        @media (min-width: 980px) {
-          .agv2__phone-img-mobile { display: none; }
-        }
-        .agv2__preview-banner {
-          position: absolute; top: 12px; left: 50%;
-          transform: translateX(-50%);
-          padding: 4px 12px;
-          border-radius: 999px;
-          background: rgba(43, 33, 28, 0.78);
-          color: #FFF6EE;
-          font-family: var(--font-text, 'Nunito', system-ui, sans-serif);
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: 0.18em;
-          text-transform: uppercase;
-          z-index: 5;
         }
         .agv2__inner {
           position: relative;

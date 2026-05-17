@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import NavBar from "@/components/NavBar";
 import HeroSection from "@/components/HeroSection";
 import VerticalProofSection from "@/components/VerticalProofSection";
-import AgentsSection from "@/components/AgentsSection";
 import AgentsSectionV2 from "@/components/AgentsSectionV2";
 import MarketingIASection from "@/components/MarketingIASection";
 import AsistenteAnalisisSection from "@/components/AsistenteAnalisisSection";
@@ -40,7 +39,6 @@ export default function Home() {
       <main>
         <HeroSection />
         <VerticalProofSection />
-        <AgentsSection />
         <AgentsSectionV2 />
         <MarketingIASection />
         <AsistenteAnalisisSection />
