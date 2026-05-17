@@ -9,6 +9,7 @@
 
 import * as React from 'react';
 import { CTA_DEMO, WA_LINK } from '../lib/copy';
+import Button from './primitives/Button';
 import SparkleIcon from './primitives/SparkleIcon';
 import CheckIcon from './primitives/icons/CheckIcon';
 
@@ -45,12 +46,7 @@ const ClosingCTA: React.FC<ClosingCTASectionProps> = ({
       </p>
 
       <div className="ccta__ctas">
-        <a className="ccta__btn ccta__btn--primary" href={primaryHref}>
-          <span className="ccta__btn-spark" aria-hidden="true">
-            <SparkleIcon size={21} color="currentColor" />
-          </span>
-          {CTA_DEMO}
-        </a>
+        <Button variant="primary" size="lg" href={primaryHref}>{CTA_DEMO}</Button>
         <a className="ccta__btn ccta__btn--secondary" href={whatsappHref}>
           Habla por WhatsApp
           <span className="ccta__btn-arrow" aria-hidden="true">→</span>
@@ -186,6 +182,24 @@ const ClosingCTA: React.FC<ClosingCTASectionProps> = ({
         display: block;
         width: 21px; height: 21px;
       }
+      /* ClosingCTA-specific overrides for the .btn--primary primitive.
+         On dark bg we want a crisp pill edge with a restrained warm halo.
+         Keep the silhouette clean; avoid stacked neon fog. */
+      .ccta .btn--primary {
+        border: 1px solid rgba(255, 244, 232, 0.58);
+        box-shadow:
+          0 0 18px rgba(232, 108, 87, 0.30),
+          0 12px 24px rgba(232, 108, 87, 0.22);
+      }
+      .ccta .btn--primary:hover {
+        box-shadow:
+          0 0 24px rgba(232, 108, 87, 0.38),
+          0 14px 28px rgba(232, 108, 87, 0.26);
+      }
+      .ccta .btn--primary .btn__sparkle {
+        box-shadow: inset 0 0 0 1px rgba(255, 244, 232, 0.22);
+      }
+
       .ccta__btn--secondary {
         background: rgba(255, 255, 255, 0.03);
         color: var(--cream, #F7F3EC);

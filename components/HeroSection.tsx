@@ -4,11 +4,9 @@
 
 import { CTA_DEMO, DEMO_HREF } from "../lib/copy";
 import Button from "./primitives/Button";
-import PhoneFrame from "./primitives/PhoneFrame";
 import SparkleIcon from "./primitives/SparkleIcon";
 import BarChartIcon from "./primitives/icons/BarChartIcon";
 import WhatsAppIcon from "./primitives/icons/WhatsAppIcon";
-import AgendaScreen from "./screens/AgendaScreen";
 
 export default function HeroSection() {
   return (
@@ -30,8 +28,8 @@ export default function HeroSection() {
             <Button variant="primary" size="lg" href={DEMO_HREF}>{CTA_DEMO}</Button>
             <a className="hero__demo-link" href="#agentes">
               <span className="hero__demo-play" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <circle cx="12" cy="12" r="11" />
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
+                  <circle cx="12" cy="12" r="11" vectorEffect="non-scaling-stroke" />
                   <path d="M10 8l6 4-6 4z" fill="currentColor" stroke="none" />
                 </svg>
               </span>
@@ -76,9 +74,15 @@ export default function HeroSection() {
           </div>
 
           <div className="hero__phone">
-            <PhoneFrame>
-              <AgendaScreen withToast={false} />
-            </PhoneFrame>
+            <img
+              src="/assets/hero-phone.webp"
+              alt="Acomply en iPhone — agenda, clientes y agentes IA"
+              width={1024}
+              height={1024}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+            />
           </div>
 
           {/* Floating WhatsApp reminder card — top-left of phone */}

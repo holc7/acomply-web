@@ -2,7 +2,7 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
     {
-      "source": "/((?!_next/|api/|precios$|empresa$|blog|privacy$|terms$|cookies$|favicon\\.ico|sitemap\\.xml|robots\\.txt|acomply-icon\\.png|acomply-icon\\.webp|acomply-wordmark\\.png|acomply-wordmark\\.webp).+)",
+      "source": "/((?!_next/|api/contact|precios$|empresa$|blog|privacy$|terms$|cookies$|favicon\\.ico|sitemap\\.xml|robots\\.txt|acomply-icon\\.png|acomply-icon\\.webp|acomply-wordmark\\.png|acomply-wordmark\\.webp).+)",
       "destination": "https://app.acomply.co/$1"
     }
   ]
