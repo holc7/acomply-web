@@ -5,7 +5,6 @@
 import PhoneFrame from "./primitives/PhoneFrame";
 import SparkleIcon from "./primitives/SparkleIcon";
 import BarChartIcon from "./primitives/icons/BarChartIcon";
-import CheckIcon from "./primitives/icons/CheckIcon";
 import PeopleIcon from "./primitives/icons/PeopleIcon";
 
 const DAYS: ReadonlyArray<{ d: string; h: number; low?: boolean; tip?: string }> = [
@@ -81,10 +80,40 @@ function AsistenteScreen() {
 }
 
 const FEATURES = [
-  { title: "Conectado a tus datos en tiempo real", desc: "Ventas, citas, clientes, productos y más. Siempre actualizado." },
-  { title: "Responde en español, sin tecnicismos", desc: "Haz preguntas como si le hablaras a tu mejor empleado." },
-  { title: "Solo usa números reales de tu negocio", desc: "Nada inventado. Todo basado en lo que ya pasa en tu negocio." },
-  { title: "Cada respuesta trae una acción clara", desc: "No solo datos. También recomendaciones para actuar." },
+  {
+    title: "Conectado a tus datos en tiempo real",
+    desc: "Ventas, citas, clientes, productos y más. Siempre actualizado.",
+    icon: <BarChartIcon bars={3} />,
+  },
+  {
+    title: "Responde en español, sin tecnicismos",
+    desc: "Haz preguntas como si le hablaras a tu mejor empleado.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M7 18l-3 2 1-4a7 7 0 117 3h-2" />
+        <path d="M9 10h.01M12 10h.01M15 10h.01" />
+      </svg>
+    ),
+  },
+  {
+    title: "Solo usa números reales de tu negocio",
+    desc: "Nada inventado. Todo basado en lo que ya pasa en tu negocio.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M20 7L9 18l-5-5" />
+      </svg>
+    ),
+  },
+  {
+    title: "Cada respuesta trae una acción clara",
+    desc: "No solo datos. También recomendaciones para actuar.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 19V5" />
+        <path d="M6 11l6-6 6 6" />
+      </svg>
+    ),
+  },
 ];
 
 export default function AsistenteAnalisisSection() {
@@ -95,9 +124,9 @@ export default function AsistenteAnalisisSection() {
 
         <div className="ana__split">
           <div className="ana__copy">
-            <span className="ana__eyebrow">
+            <span className="ana__eyebrow" aria-label="Asistente de análisis">
               <span className="ana__eyebrow-num">03</span>
-              Asistente de análisis
+              <span className="ana__eyebrow-text">Asistente de análisis</span>
             </span>
 
             <h2 className="ana__h1">
@@ -114,9 +143,7 @@ export default function AsistenteAnalisisSection() {
             <ul className="ana__features">
               {FEATURES.map((f, i) => (
                 <li key={i} className="ana__feat">
-                  <span className="ana__feat-check">
-                    <CheckIcon strokeWidth={2.6} />
-                  </span>
+                  <span className="ana__feat-icon" aria-hidden="true">{f.icon}</span>
                   <div className="ana__feat-body">
                     <h3 className="ana__feat-title">{f.title}</h3>
                     <p className="ana__feat-desc">{f.desc}</p>

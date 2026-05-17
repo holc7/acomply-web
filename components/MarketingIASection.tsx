@@ -10,7 +10,6 @@
 import PhoneFrame from "./primitives/PhoneFrame";
 import SparkleIcon from "./primitives/SparkleIcon";
 import CalendarIcon from "./primitives/icons/CalendarIcon";
-import CheckIcon from "./primitives/icons/CheckIcon";
 import PeopleIcon from "./primitives/icons/PeopleIcon";
 
 const FEATURES: string[] = [
@@ -133,10 +132,10 @@ export default function MarketingIASection() {
         <div className="mkt__split">
 
           <div className="mkt__copy">
-            <span className="mkt__eyebrow">
+            <div className="mkt__eyebrow" aria-label="Marketing IA">
               <span className="mkt__eyebrow-num">02</span>
-              Marketing IA
-            </span>
+              <span className="mkt__eyebrow-text">Marketing IA</span>
+            </div>
 
             <h2 className="mkt__h1">
               Llena tus días lentos.<br/>
@@ -152,7 +151,7 @@ export default function MarketingIASection() {
             <ul className="mkt__features">
               {FEATURES.map((f, i) => (
                 <li key={i} className="mkt__feat">
-                  <span className="mkt__feat-check"><CheckIcon strokeWidth={3} /></span>
+                  <span className="mkt__feat-num">{String(i + 1).padStart(2, "0")}</span>
                   <span className="mkt__feat-text">{f}</span>
                 </li>
               ))}
@@ -211,29 +210,65 @@ export default function MarketingIASection() {
         .mkt__copy { display: flex; flex-direction: column; gap: 1.5rem; max-width: 600px; }
 
         .mkt__eyebrow {
-          display: inline-flex; align-items: center; gap: 0.65rem;
+          display: flex;
+          align-items: center;
+          gap: 15px;
           align-self: flex-start;
-          padding: 0.5rem 1rem 0.5rem 0.55rem;
-          border-radius: 999px;
-          background: #fff;
-          box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset, 0 6px 14px -8px rgba(43,33,28,0.10), 0 0 0 1px rgba(43,33,28,0.08);
+          color: #f3ab3c;
           font-family: var(--font-text, 'Nunito', system-ui, sans-serif);
-          font-size: 0.75rem;
           font-weight: 800;
+          letter-spacing: 0.11em;
+          line-height: 1;
           text-transform: uppercase;
-          letter-spacing: 0.2em;
-          color: var(--coral, #E86C57);
         }
         .mkt__eyebrow-num {
-          width: 22px; height: 22px;
-          border-radius: 50%;
-          background: rgba(232, 108, 87, 0.14);
-          color: var(--coral, #E86C57);
-          display: inline-flex; align-items: center; justify-content: center;
+          position: relative;
+          display: inline-grid;
+          width: 52px;
+          min-width: 52px;
+          height: 34px;
+          place-items: center;
+          border-radius: 17px;
+          background: rgba(255, 248, 237, 0.52);
           font-family: var(--font-display, 'Sora', system-ui, sans-serif);
-          font-size: 11px;
-          font-weight: 700;
-          letter-spacing: -0.01em;
+          font-size: 20px;
+          font-weight: 800;
+          color: #f3ab3c;
+          text-shadow: 0 2px 8px rgba(243, 171, 60, 0.2);
+          box-shadow:
+            inset 0 0 0 1px rgba(255, 255, 255, 0.58),
+            0 4px 12px rgba(243, 171, 60, 0.08);
+        }
+        .mkt__eyebrow-num::before {
+          position: absolute;
+          inset: 0;
+          padding: 2px;
+          content: "";
+          border-radius: inherit;
+          background: conic-gradient(
+            from 0deg,
+            rgba(243, 171, 60, 0.36) 0deg,
+            rgba(243, 171, 60, 0.13) 44deg,
+            rgba(255, 255, 255, 0.08) 62deg,
+            rgba(243, 171, 60, 0.33) 128deg,
+            rgba(243, 171, 60, 0.46) 180deg,
+            rgba(243, 171, 60, 0.13) 224deg,
+            rgba(255, 255, 255, 0.08) 242deg,
+            rgba(243, 171, 60, 0.36) 306deg,
+            rgba(243, 171, 60, 0.36) 360deg
+          );
+          pointer-events: none;
+          -webkit-mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          -webkit-mask-composite: xor;
+          mask:
+            linear-gradient(#000 0 0) content-box,
+            linear-gradient(#000 0 0);
+          mask-composite: exclude;
+        }
+        .mkt__eyebrow-text {
+          font-size: clamp(12px, 1vw, 16px);
         }
 
         .mkt__h1 {
@@ -271,16 +306,22 @@ export default function MarketingIASection() {
           gap: 1.25rem 1.5rem;
         }
         .mkt__feat { display: flex; align-items: flex-start; gap: 0.75rem; }
-        .mkt__feat-check {
+        /* Numbered soft pill — same pattern as the eyebrow "01 ASISTENTE DE
+           ANÁLISIS" (mint, soft edges) instead of a hard coral 999px button. */
+        .mkt__feat-num {
           flex-shrink: 0;
-          width: 28px; height: 28px;
+          width: 30px; height: 30px;
           border-radius: 50%;
-          background: rgba(232, 108, 87, 0.12);
-          color: var(--coral, #E86C57);
+          background: rgba(141, 218, 203, 0.30);
+          border: 1px solid rgba(141, 218, 203, 0.55);
+          color: #0F6F5E;
           display: inline-flex; align-items: center; justify-content: center;
+          font-family: var(--font-display, 'Sora', system-ui, sans-serif);
+          font-size: 12px;
+          font-weight: 700;
+          letter-spacing: -0.01em;
           margin-top: 1px;
         }
-        .mkt__feat-check svg { width: 14px; height: 14px; }
         .mkt__feat-text {
           font-family: var(--font-text, 'Nunito', system-ui, sans-serif);
           font-size: 0.95rem;

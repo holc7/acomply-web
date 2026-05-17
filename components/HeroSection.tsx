@@ -5,7 +5,6 @@
 import { CTA_DEMO, DEMO_HREF } from "../lib/copy";
 import Button from "./primitives/Button";
 import SparkleIcon from "./primitives/SparkleIcon";
-import BarChartIcon from "./primitives/icons/BarChartIcon";
 import WhatsAppIcon from "./primitives/icons/WhatsAppIcon";
 import AgendaScreen from "./screens/AgendaScreen";
 
@@ -84,7 +83,7 @@ export default function HeroSection() {
 
           {/* Anchor card — full agenda screen rendered as a floating card */}
           <div className="hero__card-agenda">
-            <AgendaScreen withToast={false} />
+            <AgendaScreen />
           </div>
 
           {/* Floating WhatsApp reminder card — top-left of phone */}
@@ -110,25 +109,35 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Floating IA suggestion card — bottom-right of phone */}
+          {/* Floating Agente IA suggestion card — bottom-right of phone */}
           <div className="hero__floating hero__floating--ai" aria-hidden="true">
-            <div className="hero__floating-head">
-              <span className="hero__ai-icon">
+            <div className="hero__ai-head">
+              <span className="hero__ai-mark">
+                <SparkleIcon size={22} color="currentColor" />
+              </span>
+              <h3 className="hero__ai-title">
+                Sugerencia de
+                <br />tu Agente IA
+              </h3>
+              <span className="hero__ai-deco" aria-hidden="true">
                 <SparkleIcon size={14} color="currentColor" />
-              </span>
-              <span className="hero__floating-app">IA de Acomply</span>
-            </div>
-            <div className="hero__ai-eyebrow">Sugerencia</div>
-            <div className="hero__floating-body">
-              Tienes <strong>2 espacios libres</strong> esta tarde.
-              <br />¿Deseas activar promoción automática?
-            </div>
-            <div className="hero__ai-actions">
-              <button className="hero__ai-btn" type="button">Activar sugerencia</button>
-              <span className="hero__ai-stat" aria-hidden="true">
-                <BarChartIcon />
+                <SparkleIcon size={10} color="currentColor" />
+                <SparkleIcon size={8} color="currentColor" />
               </span>
             </div>
+            <p className="hero__ai-body">
+              Tienes <strong>3 huecos libres</strong> mañana
+              <br />entre <strong>11:00 y 15:00</strong>. ¿Quieres
+              <br />enviar una campaña para
+              <br />llenarlos?
+            </p>
+            <button className="hero__ai-cta" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M22 2L11 13" />
+                <path d="M22 2l-7 20-4-9-9-4 20-7z" />
+              </svg>
+              Enviar campaña
+            </button>
           </div>
 
         </div>
