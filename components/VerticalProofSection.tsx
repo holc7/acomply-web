@@ -83,7 +83,7 @@ const VERTICALS: Vertical[] = [
     name: "Barbería",
     services: "Corte y barba · Afeitada clásica",
     cta: "Agenda lista",
-    accent: "#2B5A8C",          // navy
+    accent: "#2B211C",          // espresso (brand)
     bg: "/assets/vcard-bg-barberia.png",
     icon: <IconScissors />,
   },
@@ -101,7 +101,7 @@ const VERTICALS: Vertical[] = [
     name: "Uñas",
     services: "Manicure · Uñas en gel",
     cta: "Agenda lista",
-    accent: "#B49ECC",          // lilac
+    accent: "#F5B44B",          // amber (brand)
     bg: "/assets/vcard-bg-unas.png",
     icon: <IconHand />,
   },
