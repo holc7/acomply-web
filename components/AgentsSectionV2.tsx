@@ -53,30 +53,30 @@ const IconTrend = () => (
 const STEPS: Step[] = [
   {
     num: "01",
-    eyebrow: "Recepcionista IA",
+    eyebrow: "Mía recibe",
     title: "Contesta cada WhatsApp, incluso a las 2 a.m.",
-    desc: "Responde con tus horarios reales, confirma citas y adapta el tono a cada cliente: paisa, costeño, formal o cercano.",
+    desc: "Mía responde con tus horarios reales, confirma citas y adapta el tono a cada cliente: paisa, costeño, formal o cercano.",
     icon: <IconChat />,
   },
   {
     num: "02",
-    eyebrow: "Marketing IA",
+    eyebrow: "Mía promociona",
     title: "Llena tus días lentos automáticamente.",
-    desc: "Detecta huecos, agrupa clientes dormidos y envía promos por WhatsApp. Tú apruebas, ella manda.",
+    desc: "Mía detecta huecos, agrupa clientes dormidos y envía promos por WhatsApp. Tú apruebas, ella manda.",
     icon: <IconMegaphone />,
   },
   {
     num: "03",
-    eyebrow: "Asistente de análisis",
+    eyebrow: "Mía analiza",
     title: "Pregúntale lo que sea a tu negocio.",
-    desc: "Responde con datos reales: ventas, clientes, días flojos. Sin tecnicismos, sin inventos.",
+    desc: "Mía responde con datos reales: ventas, clientes, días flojos. Sin tecnicismos, sin inventos.",
     icon: <IconBars />,
   },
   {
     num: "04",
     eyebrow: "Crece tu negocio",
     title: "Más reservas, menos huecos, mejores decisiones.",
-    desc: "Las 3 IAs trabajan en equipo para que tu negocio crezca solo, mientras tú atiendes.",
+    desc: "Mía trabaja por ti sin parar — recibe, promociona y analiza — para que tu negocio crezca solo mientras tú atiendes.",
     icon: <IconTrend />,
   },
 ];
@@ -95,6 +95,14 @@ export default function AgentsSectionV2() {
         height={1254}
       />
       <div className="agv2__inner">
+        <div className="agv2__hero">
+          <span className="agv2__hero-eyebrow">Tu asistente con IA</span>
+          <h2 className="agv2__hero-name">Conoce a Mía</h2>
+          <p className="agv2__hero-tagline">
+            La inteligencia artificial de Acomply. Una sola asistente que recibe a tus clientes,
+            promociona tu negocio y entiende tus números — todo desde WhatsApp.
+          </p>
+        </div>
         <div className="agv2__timeline">
           {STEPS.map((s, i) => (
             <article
@@ -151,6 +159,44 @@ export default function AgentsSectionV2() {
           max-width: 1280px;
           margin: 0 auto;
           padding-inline: clamp(1.25rem, 5vw, 2rem);
+        }
+
+        .agv2__hero {
+          position: relative;
+          z-index: 1;
+          max-width: 720px;
+          margin: 0 auto clamp(2rem, 4vw, 2.75rem);
+          text-align: center;
+        }
+        .agv2__hero-eyebrow {
+          display: inline-block;
+          margin-bottom: 14px;
+          padding: 4px 12px;
+          border-radius: 999px;
+          background: color-mix(in srgb, var(--agv2-coral) 12%, transparent);
+          color: var(--agv2-coral);
+          font-family: var(--font-text, 'Nunito', system-ui, sans-serif);
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+        .agv2__hero-name {
+          margin: 0 0 12px;
+          font-family: var(--font-display, 'Sora', system-ui, sans-serif);
+          font-size: clamp(34px, 5vw, 52px);
+          font-weight: 700;
+          line-height: 1.05;
+          letter-spacing: -0.02em;
+          color: var(--agv2-ink);
+        }
+        .agv2__hero-tagline {
+          margin: 0;
+          font-family: var(--font-text, 'Nunito', system-ui, sans-serif);
+          color: var(--agv2-muted);
+          font-size: clamp(15px, 1.15vw, 18px);
+          font-weight: 500;
+          line-height: 1.45;
         }
 
         /* Phone illustration — inline above timeline on mobile, absolute-
