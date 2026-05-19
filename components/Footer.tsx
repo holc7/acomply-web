@@ -5,7 +5,7 @@ const FOOTER_COLS = [
   {
     head: "Producto",
     links: [
-      { label: "Agentes IA", href: "#agentes" },
+      { label: "Mía", href: "#agentes" },
       { label: "Precios", href: "#precios" },
       { label: "Cómo funciona", href: "#agentes" },
       { label: "Para tu vertical", href: "#" },

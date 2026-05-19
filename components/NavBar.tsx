@@ -7,7 +7,7 @@ import AcomplyLogo from "./primitives/AcomplyLogo";
 
 const NAV_LINKS: { label: string; href: string; key: string }[] = [
   { label: "Producto", href: "#producto", key: "producto" },
-  { label: "Agentes IA", href: "#agentes", key: "agentes" },
+  { label: "Mía", href: "#agentes", key: "agentes" },
   { label: "Precios", href: "#precios", key: "precios" },
   { label: "Empresa", href: "#empresa", key: "empresa" },
 ];

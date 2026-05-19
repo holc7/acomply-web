@@ -85,7 +85,7 @@ export default function AgentsSectionV2() {
   const [selectedIdx, setSelectedIdx] = useState(0);
 
   return (
-    <section className="agv2" aria-label="Agentes IA">
+    <section className="agv2" aria-label="Mía — la IA de Acomply">
       <img
         className="agv2__phone"
         src="/assets/agents-phone.webp"
