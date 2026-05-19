@@ -24,52 +24,36 @@ type Vertical = {
 };
 
 /* ============================================================
-   Vertical icons — Phosphor Regular (MIT) hand-tuned glyphs.
-   Source: @phosphor-icons/core v2, viewBox 256x256, currentColor
-   fill — inherits the .vcard__icon color (which is set from
-   --vcard-accent per card). Phosphor "regular" matches Acomply's
-   warm painterly brand better than the previous amateur stroke
-   icons. Icons8 Carbon Copy was the first choice but SVG access
-   is paywalled ($15); Phosphor delivers the same hand-drawn feel
-   free + open source.
-
-   Mapping:
-     IconScissors  → Phosphor "scissors"
-     IconHairDryer → Phosphor "hair-dryer"   (Salón)
-     IconPaintBrush→ Phosphor "paint-brush"  (Uñas — reads as nail-art brush)
-     IconLotus     → Phosphor "flower-lotus" (Spa)
-     IconSyringe   → Phosphor "syringe"      (Clínica)
+   Vertical icons — AI-generated coral line-art (ChatGPT image-gen,
+   one-by-one with style brief). PNGs live in public/assets/icons/
+   vertical/. Rendered via CSS mask-image so each card's brand
+   accent (--vcard-accent) paints THROUGH the silhouette via
+   currentColor — keeps the espresso/coral/amber/mint/amber-gold
+   rhythm working despite raster source.
    ============================================================ */
 
-const IconScissors = () => (
-  <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-    <path d="M157.73,113.13A8,8,0,0,1,159.82,102L227.48,55.7a8,8,0,0,1,9,13.21l-67.67,46.3a7.92,7.92,0,0,1-4.51,1.4A8,8,0,0,1,157.73,113.13Zm80.87,85.09a8,8,0,0,1-11.12,2.08L136,137.7,93.49,166.78a36,36,0,1,1-9-13.19L121.83,128,84.44,102.41a35.86,35.86,0,1,1,9-13.19l143,97.87A8,8,0,0,1,238.6,198.22ZM80,180a20,20,0,1,0-5.86,14.14A19.85,19.85,0,0,0,80,180ZM74.14,90.13a20,20,0,1,0-28.28,0A19.85,19.85,0,0,0,74.14,90.13Z"/>
-  </svg>
-);
-
-const IconHairDryer = () => (
-  <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-    <path d="M200,88a32,32,0,1,0-32,32A32,32,0,0,0,200,88Zm-32,16a16,16,0,1,1,16-16A16,16,0,0,1,168,104Zm9.42,102.62L209,137.07A64,64,0,0,0,168,24a8.4,8.4,0,0,0-1.32.11L29.37,47A16,16,0,0,0,16,62.78v50.44A16,16,0,0,0,29.37,129L128,145.44V200a16,16,0,0,0,16,16,40,40,0,0,0,40,40h16a8,8,0,0,0,0-16H184a24,24,0,0,1-24-24h2.85A16,16,0,0,0,177.42,206.62ZM32,62.78,168.64,40a48,48,0,0,1,0,96L32,113.23Zm134.68,89.11A8.4,8.4,0,0,0,168,152a63.9,63.9,0,0,0,17.82-2.54l-23,50.54H144V148.11Z"/>
-  </svg>
-);
-
-const IconPaintBrush = () => (
-  <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-    <path d="M232,32a8,8,0,0,0-8-8c-44.08,0-89.31,49.71-114.43,82.63A60,60,0,0,0,32,164c0,30.88-19.54,44.73-20.47,45.37A8,8,0,0,0,16,224H92a60,60,0,0,0,57.37-77.57C182.3,121.31,232,76.08,232,32ZM92,208H34.63C41.38,198.41,48,183.92,48,164a44,44,0,1,1,44,44Zm32.42-94.45q5.14-6.66,10.09-12.55A76.23,76.23,0,0,1,155,121.49q-5.9,4.94-12.55,10.09A60.54,60.54,0,0,0,124.42,113.55Zm42.7-2.68a92.57,92.57,0,0,0-22-22c31.78-34.53,55.75-45,69.9-47.91C212.17,55.12,201.65,79.09,167.12,110.87Z"/>
-  </svg>
-);
-
-const IconLotus = () => (
-  <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-    <path d="M245.83,121.63a15.53,15.53,0,0,0-9.52-7.33,73.51,73.51,0,0,0-22.17-2.22c4-19.85,1-35.55-2.06-44.86a16.15,16.15,0,0,0-18.79-10.88,85.53,85.53,0,0,0-28.55,12.12,94.58,94.58,0,0,0-27.11-33.25,16.05,16.05,0,0,0-19.26,0A94.48,94.48,0,0,0,91.26,68.46,85.53,85.53,0,0,0,62.71,56.34,16.15,16.15,0,0,0,43.92,67.22c-3,9.31-6,25-2.06,44.86a73.51,73.51,0,0,0-22.17,2.22,15.53,15.53,0,0,0-9.52,7.33,16,16,0,0,0-1.6,12.27c3.39,12.57,13.8,36.48,45.33,55.32S113.13,208,128.05,208s42.67,0,74-18.78c31.53-18.84,41.94-42.75,45.33-55.32A16,16,0,0,0,245.83,121.63ZM59.14,72.14a.2.2,0,0,1,.23-.15A70.43,70.43,0,0,1,85.18,83.66,118.65,118.65,0,0,0,80,119.17c0,18.74,3.77,34,9.11,46.28A123.59,123.59,0,0,1,69.57,140C51.55,108.62,55.3,84,59.14,72.14Zm3,103.35C35.47,159.57,26.82,140.05,24,129.7a59.82,59.82,0,0,1,22.5-1.17,129.08,129.08,0,0,0,9.15,19.41,142.28,142.28,0,0,0,34,39.56A114.92,114.92,0,0,1,62.1,175.49ZM128,190.4c-9.33-6.94-32-28.23-32-71.23C96,76.7,118.38,55.24,128,48c9.62,7.26,32,28.72,32,71.19C160,162.17,137.33,183.46,128,190.4ZM170.82,83.66A70.43,70.43,0,0,1,196.63,72a.2.2,0,0,1,.23.15C200.7,84,204.45,108.62,186.43,140a123.32,123.32,0,0,1-19.54,25.48c5.34-12.26,9.11-27.54,9.11-46.28A118.65,118.65,0,0,0,170.82,83.66ZM232,129.72c-2.77,10.25-11.4,29.81-38.09,45.77a114.92,114.92,0,0,1-27.55,12,142.28,142.28,0,0,0,34-39.56,129.08,129.08,0,0,0,9.15-19.41A59.69,59.69,0,0,1,232,129.71Z"/>
-  </svg>
-);
-
-const IconSyringe = () => (
-  <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true">
-    <path d="M237.66,66.34l-48-48a8,8,0,0,0-11.32,11.32L196.69,48,168,76.69,133.66,42.34a8,8,0,0,0-11.32,11.32L128.69,60l-84,84A15.86,15.86,0,0,0,40,155.31v49.38L18.34,226.34a8,8,0,0,0,11.32,11.32L51.31,216h49.38A15.86,15.86,0,0,0,112,211.31l84-84,6.34,6.35a8,8,0,0,0,11.32-11.32L179.31,88,208,59.31l18.34,18.35a8,8,0,0,0,11.32-11.32ZM100.69,200H56V155.31l18-18,20.34,20.35a8,8,0,0,0,11.32-11.32L85.31,126,98,113.31l20.34,20.35a8,8,0,0,0,11.32-11.32L109.31,102,140,71.31,184.69,116Z"/>
-  </svg>
-);
+function IconMask({ name }: { name: string }) {
+  const url = `url(/assets/icons/vertical/${name}.png)`;
+  return (
+    <span
+      aria-hidden="true"
+      style={{
+        WebkitMaskImage: url,
+        maskImage: url,
+        WebkitMaskSize: "contain",
+        maskSize: "contain",
+        WebkitMaskRepeat: "no-repeat",
+        maskRepeat: "no-repeat",
+        WebkitMaskPosition: "center",
+        maskPosition: "center",
+        backgroundColor: "currentColor",
+        width: 38,
+        height: 38,
+        display: "inline-block",
+      }}
+    />
+  );
+}
 
 /* ============================================================
    Verticals data
@@ -83,7 +67,7 @@ const VERTICALS: Vertical[] = [
     cta: "Agenda lista",
     accent: "#2B211C",          // espresso (brand)
     bg: "/assets/vcard-bg-barberia.png",
-    icon: <IconScissors />,
+    icon: <IconMask name="scissors" />,
   },
   {
     key: "salon",
@@ -92,7 +76,7 @@ const VERTICALS: Vertical[] = [
     cta: "Agenda lista",
     accent: "#E86C57",          // coral
     bg: "/assets/vcard-bg-salon.png",
-    icon: <IconHairDryer />,
+    icon: <IconMask name="hair-dryer" />,
   },
   {
     key: "unas",
@@ -101,7 +85,7 @@ const VERTICALS: Vertical[] = [
     cta: "Agenda lista",
     accent: "#F5B44B",          // amber (brand)
     bg: "/assets/vcard-bg-unas.png",
-    icon: <IconPaintBrush />,
+    icon: <IconMask name="nail-polish" />,
   },
   {
     key: "spa",
@@ -110,7 +94,7 @@ const VERTICALS: Vertical[] = [
     cta: "Agenda lista",
     accent: "#5BAE96",          // mint/teal
     bg: "/assets/vcard-bg-spa.png",
-    icon: <IconLotus />,
+    icon: <IconMask name="lotus" />,
   },
   {
     key: "clinica",
@@ -119,7 +103,7 @@ const VERTICALS: Vertical[] = [
     cta: "Agenda lista",
     accent: "#C58E3B",          // amber/gold
     bg: "/assets/vcard-bg-clinica.png",
-    icon: <IconSyringe />,
+    icon: <IconMask name="medical-cross" />,
   },
 ];
 
