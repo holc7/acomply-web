@@ -43,7 +43,13 @@ export default function LocaleSwitcher({ variant = "pill" }: { variant?: Variant
             className={`locale-switcher__btn${isActive ? " is-active" : ""}`}
             onClick={() => {
               if (isActive) return;
-              router.replace(pathname, { locale: loc });
+              // Preserve hash + query when switching locales. Clicking EN
+              // on `/#producto` should land on `/en#producto`, not `/en`.
+              // pathname from next-intl/navigation excludes both, so we
+              // re-attach from window.location at click time.
+              const hash = typeof window !== "undefined" ? window.location.hash : "";
+              const query = typeof window !== "undefined" ? window.location.search : "";
+              router.replace(`${pathname}${query}${hash}`, { locale: loc });
             }}
           >
             {loc.toUpperCase()}

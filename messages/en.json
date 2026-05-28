@@ -405,9 +405,18 @@
         "sub": "Extra conversations when your month fills up.",
         "unit": "msgs",
         "tiers": [
-          { "amt": "200", "price": "$12.000" },
-          { "amt": "500", "price": "$25.000" },
-          { "amt": "1.000", "price": "$45.000" }
+          {
+            "amt": "200",
+            "price": "$12.000"
+          },
+          {
+            "amt": "500",
+            "price": "$25.000"
+          },
+          {
+            "amt": "1.000",
+            "price": "$45.000"
+          }
         ]
       },
       "looks": {
@@ -415,9 +424,18 @@
         "sub": "Styles, cuts, and color generated from a selfie.",
         "unit": "looks",
         "tiers": [
-          { "amt": "100", "price": "$15.000" },
-          { "amt": "300", "price": "$35.000" },
-          { "amt": "500", "price": "$50.000" }
+          {
+            "amt": "100",
+            "price": "$15.000"
+          },
+          {
+            "amt": "300",
+            "price": "$35.000"
+          },
+          {
+            "amt": "500",
+            "price": "$50.000"
+          }
         ]
       }
     }
@@ -459,5 +477,313 @@
       "line1": "What almost everyone",
       "line2": "<em>asks us first.</em>"
     }
+  },
+  "legal": {
+    "shell": {
+      "back": "← Acomply",
+      "back_aria": "Back to Acomply home",
+      "updated_label": "Last updated",
+      "bottom": {
+        "privacy": "Privacy",
+        "terms": "Terms",
+        "cookies": "Cookies",
+        "home": "Home"
+      }
+    },
+    "privacy": {
+      "meta": {
+        "title": "Privacy policy — Acomply",
+        "description": "How Acomply collects, uses, and protects information from businesses and their customers."
+      },
+      "title": "Privacy policy",
+      "updated": "May 15, 2026",
+      "intro": "At Acomply we respect your privacy. This policy explains what information we collect when a business uses the platform or a customer books through it, why we collect it, and how we protect it. It is written in accordance with <b>Law 1581 of 2012</b> (Habeas Data — Colombia's data protection law) and Decree 1377 of 2013.",
+      "s1": {
+        "h2": "1. Who we are",
+        "body": "Acomply is a software platform (SaaS) that lets barbershops, hair salons, spas, nail studios, and other personal-service businesses manage online bookings, communicate with their customers over WhatsApp, generate marketing campaigns with artificial intelligence, and process payments. We operate in Colombia and handle inquiries at <a>hola@acomply.co</a>."
+      },
+      "s2": {
+        "h2": "2. Who's responsible for your data",
+        "intro": "We distinguish two relationships so it's clear who decides how each piece of data is processed:",
+        "li": [
+          "<b>If you're an owner or member of a business</b> that uses Acomply, we (Acomply) are the <b>data controller</b> for the data tied to your admin account (email, password, billing information, business configuration).",
+          "<b>If you're a customer booking with a business</b> through acomply.co/'{'business'}', the <b>business is the data controller</b> for the data it collects about you (your name, contact, appointment history). Acomply acts as the <b>data processor</b> — we process it on the business's instructions to deliver the service. To exercise your rights over that data you can contact the business directly or us, and we'll coordinate."
+        ]
+      },
+      "s3": {
+        "h2": "3. What data we collect",
+        "h3_business": "From businesses and their teams",
+        "li_business": [
+          "Business name, slug, address, hours, photos of the location.",
+          "Email address, password (hashed), name, role (owner / professional).",
+          "Billing information for the subscription and add-on packs.",
+          "Business configuration: services, prices, products, commissions.",
+          "Credentials to connect channels (WhatsApp Business token, Wompi keys)."
+        ],
+        "h3_clients": "From customers booking through Acomply",
+        "li_clients": [
+          "Name and, if you provide it, email address.",
+          "WhatsApp number (when you book or message us from it).",
+          "Bookings: service, professional, date, time, notes, and full appointment history.",
+          "Reviews and ratings you choose to leave after the service.",
+          "Conversations with the WhatsApp assistant (when the business has it enabled).",
+          "If you use the look simulator: the photo you upload and the generated results. The photo is kept only to show you your look and is deleted within 30 days.",
+          "External sign-in: if you sign in with Google, we receive your name, email, and Google identifier. We don't have access to your password."
+        ],
+        "h3_tech": "Technical data (from any visitor)",
+        "li_tech": [
+          "IP address, device type, browser, operating system.",
+          "Pages visited and usage events, in aggregated form.",
+          "Essential cookies (session, language) and, with your consent, measurement cookies."
+        ]
+      },
+      "s4": {
+        "h2": "4. How we use your data",
+        "li": [
+          "Operating the platform: showing your calendar, confirming appointments, sending reminders.",
+          "Sending transactional messages via WhatsApp and email (confirmation, 24-hour reminder, changes, cancellations, invoice).",
+          "Processing payments through authorized providers (Wompi).",
+          "Charging the subscription and the add-on packs you purchase.",
+          "Improving the platform by analyzing aggregated statistics.",
+          "Detecting and preventing fraud, abuse, or misuse of the service.",
+          "Complying with legal obligations or responding to requests from competent authorities."
+        ],
+        "outro": "We don't use your personal data to train our own artificial-intelligence models. We also don't sell personal information to third parties."
+      },
+      "s5": {
+        "h2": "5. Who we share your data with",
+        "intro": "We share data only with providers that help us operate the service:",
+        "li": [
+          "<b>Meta Platforms / WhatsApp Business Cloud API:</b> sending and receiving WhatsApp messages.",
+          "<b>Wompi (Bancolombia):</b> online payment processing (subscription and packs).",
+          "<b>Vercel</b> and <b>Neon</b>: application and database hosting.",
+          "<b>Resend</b>: transactional email delivery.",
+          "<b>OpenAI</b>: language and image models for the AI agents. Conversations and images are sent in \"no-training\" mode where the provider supports it.",
+          "<b>Google</b>: sign-in with a Google account (optional)."
+        ],
+        "outro": "Each provider processes data under its own privacy policies and only as far as needed to provide us with the service. Some servers are located outside Colombia; international transfers go to countries with protection levels deemed adequate or under standard contractual clauses."
+      },
+      "s6": {
+        "h2": "6. How long we keep your data",
+        "li": [
+          "Business accounts: while the subscription is active, plus 12 months after cancellation for tax and accounting purposes.",
+          "End-customer data: for as long as the business keeps it in its account. If the business closes its account or you request deletion, we delete your personal data within 30 days.",
+          "Technical logs: up to 90 days.",
+          "Billing information: for the period required by Colombian tax law (minimum 5 years)."
+        ]
+      },
+      "s7": {
+        "h2": "7. Your rights",
+        "intro": "Under Law 1581 of 2012, at any time you can:",
+        "li": [
+          "Know what information we hold about you.",
+          "Ask us to correct it if it's outdated or wrong.",
+          "Request its deletion or the closure of your account.",
+          "Revoke any consent you've granted.",
+          "File complaints with the Superintendence of Industry and Commerce (SIC)."
+        ],
+        "outro": "To exercise these rights, write to us at <a>hola@acomply.co</a>. We respond within a maximum of 15 business days, extendable by 8 additional days as the law allows."
+      },
+      "s8": {
+        "h2": "8. Security",
+        "body": "Your information travels over HTTPS and is stored in encrypted databases. Passwords are stored with a cryptographic hash (bcrypt) — never in plain text. Separation between businesses is enforced at the database level via Row-Level Security. We limit internal access to strictly necessary personnel and maintain audit logs."
+      },
+      "s9": {
+        "h2": "9. Cookies",
+        "body": "We use essential cookies (session, language) that don't require consent because they are necessary for the platform to work. If you give consent via the banner, we may use optional cookies to understand aggregate use of the service. You can change your choice from the bottom banner at any time or delete the <code>acomply-cookie-consent</code> entry from your local storage. More details in our <a>Cookie policy</a>."
+      },
+      "s10": {
+        "h2": "10. Minors",
+        "body": "The service is intended for users over 14. If you are a minor, you must have authorization from your legal guardian before registering. If we detect an account created without that authorization we will delete it."
+      },
+      "s11": {
+        "h2": "11. Changes to this policy",
+        "body": "If we update this policy, we will change the \"Last updated\" date at the top and, when changes are significant, we will let you know by email or WhatsApp."
+      },
+      "s12": {
+        "h2": "12. Contact",
+        "body": "For any question about this policy or how we process your data, write to us at <a>hola@acomply.co</a>."
+      }
+    },
+    "terms": {
+      "meta": {
+        "title": "Terms and conditions — Acomply",
+        "description": "Rules for using Acomply: the SaaS platform for bookings + WhatsApp + AI for service businesses in Colombia."
+      },
+      "title": "Terms and conditions",
+      "updated": "May 15, 2026",
+      "intro": "Welcome to Acomply. These terms govern the use of the platform. By creating an account or booking through acomply.co you accept these terms. If you don't agree, don't use the service.",
+      "s1": {
+        "h2": "1. What Acomply is",
+        "body": "Acomply is a software platform (SaaS) that lets barbershops, hair salons, spas, nail studios, massage centers, aesthetic clinics, and other personal-service businesses in Colombia offer online bookings, communicate with their customers over WhatsApp, run marketing campaigns with artificial intelligence, and accept payments through Wompi. Acomply <b>is not a service business</b>; it's the tool these businesses use to operate."
+      },
+      "s2": {
+        "h2": "2. Who can use the service",
+        "intro": "There are two types of users and the terms apply to both:",
+        "li": [
+          "<b>Businesses and their team</b> (\"Customer\"): whoever signs up for the subscription and uses the platform to manage their business.",
+          "<b>End customers</b> (\"Visitor\"): whoever books an appointment through acomply.co/'{'business'}' or interacts with the WhatsApp assistant."
+        ],
+        "outro": "You must be over 14. If you are a minor, you need authorization from your legal guardian."
+      },
+      "s3": {
+        "h2": "3. Account and registration",
+        "li": [
+          "The information you provide must be truthful and current.",
+          "You are responsible for keeping your credentials secure and for all activity carried out from your account.",
+          "If you are a business, you are responsible for the behavior of your team members on the platform.",
+          "You can close your account at any time by writing to us at <a>hola@acomply.co</a>."
+        ]
+      },
+      "s4": {
+        "h2": "4. Subscription, packs, and payments (business Customer only)",
+        "li": [
+          "The subscription is billed monthly in Colombian pesos (COP). The current plans are <b>Esencial</b> ($39.900), <b>Maestro</b> ($59.900), and <b>Élite</b> ($79.900). The current price and inclusions are shown at the time of signing up.",
+          "Each plan includes a monthly allowance of WhatsApp messages and AI generations. When the allowance is reached, sending is blocked until the start of the next period or until you buy a top-up pack.",
+          "Top-up packs are charged as one-time purchases and are applied immediately to the current month's allowance. They do not expire within the current month.",
+          "Payments are processed through Wompi (Bancolombia). Acomply does not store card information; we only receive the status of the transaction.",
+          "If your payment fails and isn't resolved within 7 days, we may suspend access to the platform. Your data is kept for 12 months during the suspension."
+        ]
+      },
+      "s5": {
+        "h2": "5. Online payments for appointments (between Visitor and business)",
+        "body": "Some businesses enable online payment for appointments via Wompi. In those cases, the payment goes to the business's merchant account, not to Acomply. The business is responsible for the service provided, any refunds, and invoicing. Acomply only acts as the software provider that connects the business with Wompi."
+      },
+      "s6": {
+        "h2": "6. How bookings work (Visitor)",
+        "li": [
+          "You choose service, professional, date, and time within the business's available hours.",
+          "The appointment is confirmed when you receive the confirmation message via WhatsApp or email.",
+          "We will send you a reminder approximately 24 hours in advance.",
+          "Prices shown are indicative. The final amount may vary based on the service actually delivered and is confirmed at the location.",
+          "You can reschedule or cancel with at least 2 hours' notice. Late cancellations or repeated no-shows can lead the business to require prior confirmation or a deposit on future bookings."
+        ]
+      },
+      "s7": {
+        "h2": "7. AI assistants (Receptionist, Marketing, Analytics)",
+        "li": [
+          "The conversational assistant uses artificial-intelligence models to understand your messages. Conversations are kept to improve the service and to support handling of complaints. You can request their deletion at any time.",
+          "The marketing image generator produces pieces based on the business's information. Generated images are indicative: they may contain style variations between generations.",
+          "The analytics assistant responds with real data from your account. It does not make up numbers — if it doesn't know something, it tells you.",
+          "Acomply does not guarantee the accuracy of the assistant's responses or simulations. Any decision about your appointment should be confirmed with the business."
+        ]
+      },
+      "s8": {
+        "h2": "8. Expected conduct",
+        "intro": "When using Acomply you agree not to:",
+        "li": [
+          "Book under a false identity or using someone else's WhatsApp numbers.",
+          "Make mass bookings with the intent to block out time slots.",
+          "Send offensive, illegal, non-consensual sexual, or off-topic content to the assistant.",
+          "Upload photos of third parties without their permission to the simulators.",
+          "Attempt to breach, probe, reverse-engineer, or destabilize the platform.",
+          "Use the service to send spam or unsolicited messages to customers.",
+          "Attempt to access data from other businesses or their customers."
+        ],
+        "outro": "We may suspend or cancel accounts that break these rules, without refund of the current month's subscription if the violation is serious."
+      },
+      "s9": {
+        "h2": "9. Business Customer data",
+        "body": "As a business Customer, the end-customer data you enter into the platform is yours. Acomply processes it exclusively on your instruction to provide you with the service (see <a>Privacy policy</a>). If you cancel your account, we can delete it at your request or hand it over to you in exportable format within 30 days."
+      },
+      "s10": {
+        "h2": "10. Intellectual property",
+        "body": "Acomply's name, logo, code, designs, and content are ours or licensed to us. You may not copy, redistribute, or develop derivative products without written permission. The brand and content uploaded by each business remain the business's property."
+      },
+      "s11": {
+        "h2": "11. Availability and limitation of liability",
+        "intro": "We make reasonable efforts to keep the service available, but it is offered \"as is\" and \"as available\". We don't guarantee uninterrupted availability or that the service will be free of errors. We are not responsible for:",
+        "li": [
+          "Interruptions caused by external providers (Meta, Vercel, Neon, Wompi, OpenAI, Google).",
+          "Lost appointments, revenue, or customers resulting from technical failures.",
+          "Errors in messages generated by the artificial-intelligence assistants.",
+          "Indirect, consequential, or lost-profit damages.",
+          "Decisions made solely on the basis of assistant information without confirming with the business."
+        ],
+        "outro": "In any case, Acomply's aggregate liability to the business Customer is limited to the amount paid for the subscription in the 3 months preceding the event that gave rise to the claim."
+      },
+      "s12": {
+        "h2": "12. Cancellation and termination",
+        "li": [
+          "You can cancel your subscription at any time from your account settings or by writing to us. Cancellation takes effect at the end of the billed period.",
+          "We may terminate your account with 30 days' notice if we stop operating the service.",
+          "We may suspend or terminate your account without notice for serious breach of these terms, fraud, or illegal use of the service."
+        ]
+      },
+      "s13": {
+        "h2": "13. Changes to the terms",
+        "body": "We may update these terms. When we do, we will change the date at the top and, if the changes are significant, we will let you know by email at least 15 days in advance. If you keep using the service after the effective date, you are deemed to accept the new terms."
+      },
+      "s14": {
+        "h2": "14. Governing law and jurisdiction",
+        "body": "These terms are governed by the laws of the Republic of Colombia. Any dispute will be resolved before the civil courts of the defendant's domicile, except where mandatory law provides otherwise."
+      },
+      "s15": {
+        "h2": "15. Contact",
+        "body": "Questions, suggestions, complaints, or Habeas Data requests: <a>hola@acomply.co</a>."
+      }
+    },
+    "cookies": {
+      "meta": {
+        "title": "Cookie policy — Acomply",
+        "description": "What cookies Acomply uses, what they do, and how to change your choice."
+      },
+      "title": "Cookie policy",
+      "updated": "May 15, 2026",
+      "intro": "This policy explains what cookies are, which ones we use on <b>acomply.co</b>, and how you can change your choice. It is part of our <a>Privacy policy</a> and is written in line with <b>Law 1581 of 2012</b> (Habeas Data — Colombia's data protection law) and Decree 1377 of 2013.",
+      "s1": {
+        "h2": "1. What cookies are",
+        "body": "Cookies are small text files that a website stores on your device when you visit it. They let the site remember information between pages (for example, that you're already signed in, what language you prefer) or help it understand how the service is used in aggregate. Some cookies are deleted when you close the browser (session cookies); others remain for a while (persistent cookies)."
+      },
+      "s2": {
+        "h2": "2. Cookies we use",
+        "h3_necessary": "Strictly necessary",
+        "necessary_intro": "These don't require consent because without them the platform doesn't work.",
+        "li_necessary": [
+          "<b>Authentication session</b> — keeps your sign-in active across pages while you use the admin panel. Expires when you close the browser or the session times out.",
+          "<b>Language preference</b> — remembers the selected language (es / en).",
+          "<b>Cookie acceptance</b> — saves your choice in the banner so it doesn't show again. Stored as a local entry called <code>acomply-cookie-consent</code>.",
+          "<b>Anti-CSRF tokens</b> — protect forms against malicious submissions."
+        ],
+        "h3_optional": "Optional (require your consent)",
+        "optional_intro": "These only activate if you click <em>Accept</em> in the banner. We don't have any analytics active today, but we record your choice for when we add them.",
+        "li_optional": [
+          "<b>Anonymous analytics</b> (planned — not active today) — a privacy-respecting provider (no profiling, no advertising third parties) will give us aggregated usage metrics."
+        ],
+        "h3_not_used": "Cookies we <em>don't</em> use",
+        "not_used_body": "Acomply <b>does not</b> use third-party marketing cookies, social-network retargeting pixels, or cookies for advertising profiling. We also don't sell personal information to third parties (see <a>Privacy policy</a> §5)."
+      },
+      "s3": {
+        "h2": "3. Third-party cookies that may appear",
+        "intro": "Some external services the platform uses may set their own cookies on specific pages:",
+        "li": [
+          "<b>Wompi</b> — during a payment checkout. Sets cookies required to process the transaction securely. Processed by Bancolombia.",
+          "<b>Google</b> — only if you choose to sign in with your Google account. Its own cookies are governed by <a>Google's cookie policy</a>.",
+          "<b>YouTube</b> — if we embed a video in a blog post (when one exists). We recommend using its privacy mode when available."
+        ]
+      },
+      "s4": {
+        "h2": "4. How to change your choice",
+        "li": [
+          "<b>From the bottom banner</b> — if you want to undo your choice, delete the <code>acomply-cookie-consent</code> entry from your browser's local storage and reload the page. You'll see the banner again.",
+          "<b>From your browser</b> — most browsers let you view, block, or delete cookies by domain. Look for \"Settings\" → \"Privacy and security\" → \"Cookies\".",
+          "<b>In incognito mode</b> — cookies are deleted automatically when you close the window."
+        ],
+        "outro": "Blocking strictly necessary cookies may prevent certain features (sign-in, forms) from working correctly."
+      },
+      "s5": {
+        "h2": "5. Changes to this policy",
+        "body": "If we update this policy, we'll change the \"Last updated\" date at the top. If the changes are significant, we'll let you know in the bottom banner the next time you visit the site."
+      },
+      "s6": {
+        "h2": "6. Contact",
+        "body": "For questions about this policy or how we process your data, write to us at <a>hola@acomply.co</a>."
+      }
+    }
+  },
+  "locale_switcher": {
+    "aria": "Language",
+    "label_es": "Switch to Spanish",
+    "label_en": "Switch to English"
   }
 }

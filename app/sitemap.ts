@@ -13,9 +13,12 @@ import { locales, defaultLocale } from "@/i18n/config";
 
 const BASE = "https://acomply.co";
 const ROUTES = ["", "/privacy", "/terms", "/cookies"] as const;
+// Hardcoded so the sitemap re-evaluation per request doesn't tell Google
+// that every page was "modified" on every crawl — search engines distrust
+// spammy lastmod stamps. Bump this manually when content changes.
+const LAST_MODIFIED = new Date("2026-05-28");
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
   const entries: MetadataRoute.Sitemap = [];
 
   for (const route of ROUTES) {
@@ -24,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         locale === defaultLocale ? route || "/" : `/${locale}${route}`;
       entries.push({
         url: `${BASE}${localizedPath}`,
-        lastModified: now,
+        lastModified: LAST_MODIFIED,
         changeFrequency: route === "" ? "weekly" : "monthly",
         priority: route === "" ? 1.0 : 0.5,
         alternates: {
