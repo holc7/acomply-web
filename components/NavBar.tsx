@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl";
 import { DEMO_HREF } from "../lib/copy";
 import AcomplyLogo from "./primitives/AcomplyLogo";
 import MiaWordmark from "./primitives/MiaWordmark";
+import LocaleSwitcher from "./LocaleSwitcher";
 
 type Props = { active?: string };
 
@@ -44,6 +45,8 @@ export default function NavBar({ active }: Props) {
           ))}
         </div>
 
+        <LocaleSwitcher variant="pill" />
+
         <a className="acnav__cta" href={DEMO_HREF}>
           {t("cta")}
         </a>
@@ -71,6 +74,9 @@ export default function NavBar({ active }: Props) {
       </nav>
 
       <div className={`acnav__drawer${open ? " is-open" : ""}`} aria-hidden={!open}>
+        <div className="acnav__drawer-locale">
+          <LocaleSwitcher variant="pill" />
+        </div>
         {NAV_LINKS.map((l) => (
           <a key={l.key} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
         ))}
