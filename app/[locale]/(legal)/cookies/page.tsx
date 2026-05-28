@@ -9,6 +9,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import LegalShell from "@/components/legal/LegalShell";
 
 const ROUTE = "cookies";
@@ -59,7 +60,7 @@ export default async function CookiesPage({
       <p>
         {t.rich("intro", {
           ...richDefaults,
-          a: (chunks: ReactNode) => <a href="/privacy">{chunks}</a>,
+          a: (chunks: ReactNode) => <Link href="/privacy">{chunks}</Link>,
         })}
       </p>
 
@@ -88,7 +89,7 @@ export default async function CookiesPage({
       <p>
         {t.rich("s2.not_used_body", {
           ...richDefaults,
-          a: (chunks: ReactNode) => <a href="/privacy">{chunks}</a>,
+          a: (chunks: ReactNode) => <Link href="/privacy">{chunks}</Link>,
         })}
       </p>
 

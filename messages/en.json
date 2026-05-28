@@ -1,7 +1,7 @@
 {
   "app": {
     "title": "Acomply — Your business, always supported.",
-    "description": "Acomply runs your day-to-day: bookings, customers, payments, WhatsApp and AI in one platform for service businesses.",
+    "description": "Acomply supports your day-to-day: bookings, customers, payments, WhatsApp and AI in one platform for service businesses.",
     "og": {
       "description": "Bookings, customers, payments, WhatsApp and AI in one platform for service businesses."
     },
@@ -37,14 +37,14 @@
     },
     "wa_card": {
       "title": "Reminder sent",
-      "body": "WhatsApp reminder sent<br/>to Camila R.",
+      "body": "WhatsApp reminder sent<br></br>to Camila R.",
       "status_delivered": "Delivered",
       "time": "10:30 AM"
     },
     "ai_card": {
       "title_line1": "Suggestion from",
       "title_line2": "your AI Agent",
-      "body": "You have <strong>3 open slots</strong> tomorrow<br/>between <strong>11:00 and 15:00</strong>. Want<br/>to send a campaign to<br/>fill them?",
+      "body": "You have <strong>3 open slots</strong> tomorrow<br></br>between <strong>11:00 and 15:00</strong>. Want<br></br>to send a campaign to<br></br>fill them?",
       "cta": "Send campaign"
     }
   },
@@ -69,7 +69,7 @@
       "whatsapp": "WhatsApp",
       "estado": "System status"
     },
-    "tagline": "Acomply runs your day-to-day: bookings, customers, payments, WhatsApp and AI in one platform for service businesses.",
+    "tagline": "Acomply supports your day-to-day: bookings, customers, payments, WhatsApp and AI in one platform for service businesses.",
     "copyright": {
       "entity": "© 2026 Acomply S.A.S.",
       "nit_status": "Tax ID pending",
@@ -225,7 +225,7 @@
       "promo_title": "Come back this week and your next visit is <em>20% off.</em>",
       "row_chip": "Ready to review",
       "row_title": "Campaign draft",
-      "sugg_strong": "Suggested by Analyst",
+      "sugg_strong": "Suggested by Analyst assistant",
       "sugg_sub": "Tuesdays and Wednesdays are slow.",
       "title": "Marketing AI"
     }

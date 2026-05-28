@@ -37,14 +37,14 @@
     },
     "wa_card": {
       "title": "Recordatorio enviado",
-      "body": "Se envio recordatorio por<br/>WhatsApp a Camila R.",
+      "body": "Se envió recordatorio por<br></br>WhatsApp a Camila R.",
       "status_delivered": "Entregado",
       "time": "10:30 a. m."
     },
     "ai_card": {
       "title_line1": "Sugerencia de",
       "title_line2": "tu Agente IA",
-      "body": "Tienes <strong>3 huecos libres</strong> mañana<br/>entre <strong>11:00 y 15:00</strong>. ¿Quieres<br/>enviar una campaña para<br/>llenarlos?",
+      "body": "Tienes <strong>3 huecos libres</strong> mañana<br></br>entre <strong>11:00 y 15:00</strong>. ¿Quieres<br></br>enviar una campaña para<br></br>llenarlos?",
       "cta": "Enviar campaña"
     }
   },

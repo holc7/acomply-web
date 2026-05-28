@@ -10,6 +10,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import LegalShell from "@/components/legal/LegalShell";
 
 const ROUTE = "privacy";
@@ -155,7 +156,7 @@ export default async function PrivacyPage({
       <p>
         {t.rich("s9.body", {
           ...richDefaults,
-          a: (chunks: ReactNode) => <a href="/cookies">{chunks}</a>,
+          a: (chunks: ReactNode) => <Link href="/cookies">{chunks}</Link>,
         })}
       </p>
 
