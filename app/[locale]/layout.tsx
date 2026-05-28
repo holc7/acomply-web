@@ -35,6 +35,12 @@ export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
+// Reject any locale not in our list with a 404 instead of running this
+// layout per-request for garbage URLs like /jp/precios. Phase 2 Reviewer
+// flagged this MEDIUM — without it, an attacker can probe arbitrary
+// locale-shaped paths and force layout execution.
+export const dynamicParams = false;
+
 const OG_LOCALE: Record<Locale, string> = {
   es: "es_CO",
   en: "en_US",
