@@ -1,6 +1,7 @@
 // [perf-audited 2026-05-15 / vercel-react-best-practices v1.0 + typescript-best-practices] audited-clean — no findings
 "use client";
 
+import { useTranslations } from "next-intl";
 import CheckCircleIcon from "./primitives/icons/CheckCircleIcon";
 
 type Feature = { label: string };
@@ -17,27 +18,25 @@ type Props = {
   className?: string;
 };
 
-const DEFAULT_FEATURES: Feature[] = [
-  { label: "Página de reservas pública" },
-  { label: "Recordatorios automáticos por WhatsApp" },
-  { label: "Agenda individual" },
-  { label: "Reseñas y calificaciones" },
-  { label: "Galería de trabajos" },
-  { label: "Gestión de clientes" },
-];
-
 export default function PricingCardEsencial({
-  tier = "Esencial",
-  name = "Acomply Esencial",
-  sell = "Para una sola persona. Sin sorpresas y sin IA.",
+  tier,
+  name,
+  sell,
   price = "39.900",
-  period = "/mes · facturación mensual",
+  period,
   features,
-  ctaLabel = "Empieza con Esencial",
+  ctaLabel,
   ctaHref = "#demo",
   className = "",
 }: Props) {
-  const feats = features ?? DEFAULT_FEATURES;
+  const t = useTranslations("pricing");
+  const te = useTranslations("pricing.tier_esencial");
+  const resolvedTier = tier ?? t("tier_labels.esencial");
+  const resolvedName = name ?? te("name");
+  const resolvedSell = sell ?? te("sell");
+  const resolvedPeriod = period ?? te("period");
+  const resolvedCta = ctaLabel ?? te("cta");
+  const feats: Feature[] = features ?? (te.raw("features") as string[]).map((label) => ({ label }));
 
   return (
     <div className={`pce ${className}`}>
@@ -63,16 +62,16 @@ export default function PricingCardEsencial({
       <span className="pce__noise" aria-hidden="true" />
 
       <div className="pce__inner">
-        <span className="pce__tier">{tier}</span>
-        <h3 className="pce__name">{name}</h3>
-        {sell && <p className="pce__sell">{sell}</p>}
+        <span className="pce__tier">{resolvedTier}</span>
+        <h3 className="pce__name">{resolvedName}</h3>
+        {resolvedSell && <p className="pce__sell">{resolvedSell}</p>}
 
         <div className="pce__price-wrap">
           <span className="pce__price-cur">$</span>
           <span className="pce__price-num">{price}</span>
           <span className="pce__price-curB">COP</span>
         </div>
-        {period && <div className="pce__period">{period}</div>}
+        {resolvedPeriod && <div className="pce__period">{resolvedPeriod}</div>}
 
         <hr className="pce__hr" />
 
@@ -87,7 +86,7 @@ export default function PricingCardEsencial({
 
         <div className="pce__cta-wrap">
           <a className="pce__cta" href={ctaHref}>
-            {ctaLabel}
+            {resolvedCta}
           </a>
         </div>
       </div>

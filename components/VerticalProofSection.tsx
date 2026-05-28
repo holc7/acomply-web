@@ -10,14 +10,14 @@
    for all 5 cards until per-vertical swatches are generated.
    ============================================================ */
 
+"use client";
+
 import * as React from "react";
+import { useTranslations } from "next-intl";
 import SparkleIcon from "./primitives/SparkleIcon";
 
 type Vertical = {
   key: string;
-  name: string;
-  services: string;
-  cta: string;
   accent: string; // hex for the chip + accents
   bg: string;     // watercolor swatch path
   icon: React.ReactNode;
@@ -62,45 +62,30 @@ function IconMask({ name }: { name: string }) {
 const VERTICALS: Vertical[] = [
   {
     key: "barberia",
-    name: "Barbería",
-    services: "Corte y barba · Afeitada clásica",
-    cta: "Agenda lista",
     accent: "#2B211C",          // espresso (brand)
     bg: "/assets/vcard-bg-barberia.png",
     icon: <IconMask name="scissors" />,
   },
   {
     key: "salon",
-    name: "Salón de belleza",
-    services: "Tinte y peinado · Mechas",
-    cta: "Agenda lista",
     accent: "#E86C57",          // coral
     bg: "/assets/vcard-bg-salon.png",
     icon: <IconMask name="hair-dryer" />,
   },
   {
     key: "unas",
-    name: "Uñas",
-    services: "Manicure · Uñas en gel",
-    cta: "Agenda lista",
     accent: "#F5B44B",          // amber (brand)
     bg: "/assets/vcard-bg-unas.png",
     icon: <IconMask name="nail-polish" />,
   },
   {
     key: "spa",
-    name: "Spa & wellness",
-    services: "Masaje relajante · Limpieza facial",
-    cta: "Agenda lista",
     accent: "#5BAE96",          // mint/teal
     bg: "/assets/vcard-bg-spa.png",
     icon: <IconMask name="lotus" />,
   },
   {
     key: "clinica",
-    name: "Clínica estética",
-    services: "Botox · Rellenos",
-    cta: "Agenda lista",
     accent: "#C58E3B",          // amber/gold
     bg: "/assets/vcard-bg-clinica.png",
     icon: <IconMask name="medical-cross" />,
@@ -112,17 +97,18 @@ const VERTICALS: Vertical[] = [
    ============================================================ */
 
 export default function VerticalProofSection() {
+  const t = useTranslations("vertical");
+
   return (
     <section className="vprof" id="verticales">
       <div className="vprof__inner">
         <div className="vprof__head">
           <h2 className="vprof__h1">
-            Hecho para <em>tu industria.</em>
+            {t.rich("section.h1", { em: (chunks) => <em>{chunks}</em> })}
           </h2>
 
           <p className="vprof__sub">
-            Barbería, salón, uñas, spa o clínica — Acomply adapta reservas,
-            servicios, clientes y WhatsApp al ritmo de cada negocio.
+            {t("section.sub")}
           </p>
         </div>
 
@@ -133,7 +119,7 @@ export default function VerticalProofSection() {
             <span className="vprof__ring vprof__ring--2" />
             <span className="vprof__ring vprof__ring--1" />
           </div>
-          <ul className="vprof__cards" aria-label="Verticales soportados">
+          <ul className="vprof__cards" aria-label={t("section.aria_cards")}>
           {VERTICALS.map((v) => (
             <li
               key={v.key}
@@ -147,14 +133,14 @@ export default function VerticalProofSection() {
               />
               <div className="vcard__inner">
                 <span className="vcard__icon" aria-hidden="true">{v.icon}</span>
-                <h3 className="vcard__name">{v.name}</h3>
-                <p className="vcard__services">{v.services}</p>
+                <h3 className="vcard__name">{t(`${v.key}.name`)}</h3>
+                <p className="vcard__services">{t(`${v.key}.services`)}</p>
                 <span className="vcard__spark" aria-hidden="true">
                   <span className="vcard__spark-line" />
                   <SparkleIcon size={14} color="currentColor" />
                   <span className="vcard__spark-line" />
                 </span>
-                <span className="vcard__cta">{v.cta}</span>
+                <span className="vcard__cta">{t(`${v.key}.cta`)}</span>
               </div>
             </li>
           ))}
@@ -162,7 +148,7 @@ export default function VerticalProofSection() {
         </div>
 
         <p className="vprof__foot">
-          Una sola plataforma. <em>Cada negocio</em> con su propio lenguaje.
+          {t.rich("section.foot", { em: (chunks) => <em>{chunks}</em> })}
         </p>
       </div>
 

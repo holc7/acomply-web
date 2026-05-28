@@ -7,23 +7,19 @@
 
 "use client";
 
+import { useTranslations } from "next-intl";
 import PhoneFrame from "./primitives/PhoneFrame";
 import SparkleIcon from "./primitives/SparkleIcon";
 import CalendarIcon from "./primitives/icons/CalendarIcon";
 import PeopleIcon from "./primitives/icons/PeopleIcon";
 
-const FEATURES: string[] = [
-  "Segmenta clientes por frecuencia, gasto y servicio",
-  "Sugiere promos según días flojos",
-  "Genera mensaje e imagen con tu estilo",
-  "Mide reservas e ingreso recuperado",
-];
-
-const MarketingScreen = () => (
+const MarketingScreen = () => {
+  const t = useTranslations("marketing_ia.screen");
+  return (
   <div className="mia">
     <div className="mia__top">
       <span className="mia__back">‹</span>
-      <span className="mia__title">Marketing IA</span>
+      <span className="mia__title">{t("title")}</span>
       <span className="mia__menu">
         <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
       </span>
@@ -33,8 +29,8 @@ const MarketingScreen = () => (
       <div className="mia__sugg">
         <span className="mia__sugg-icon"><SparkleIcon size={11} color="currentColor" /></span>
         <span className="mia__sugg-text">
-          <strong>Sugerido por Asistente de Análisis</strong>
-          <small>Martes y miércoles están flojos.</small>
+          <strong>{t("sugg_strong")}</strong>
+          <small>{t("sugg_sub")}</small>
         </span>
         <span className="mia__sugg-arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
@@ -42,14 +38,14 @@ const MarketingScreen = () => (
       </div>
 
       <div className="mia__row">
-        <span className="mia__row-title">Borrador de campaña</span>
-        <span className="mia__row-chip">Lista para revisar</span>
+        <span className="mia__row-title">{t("row_title")}</span>
+        <span className="mia__row-chip">{t("row_chip")}</span>
       </div>
 
       <div className="mia__promo">
-        <div className="mia__promo-eyebrow">Campaña</div>
+        <div className="mia__promo-eyebrow">{t("campaign_eyebrow")}</div>
         <div className="mia__promo-title">
-          Vuelve esta semana y tu próxima cita tiene <em>20% menos.</em>
+          {t.rich("promo_title", { em: (chunks) => <em>{chunks}</em> })}
         </div>
         <span className="mia__promo-sparkles mia__promo-sparkle-1"><SparkleIcon size={16} color="currentColor" /></span>
         <span className="mia__promo-sparkles mia__promo-sparkle-2"><SparkleIcon size={10} color="currentColor" /></span>
@@ -61,42 +57,42 @@ const MarketingScreen = () => (
             <PeopleIcon variant="one" />
           </span>
           <span className="mia__detail-label">
-            Segmento
-            <small>Clientes inactivos 30–90 días</small>
+            {t("detail_segment_label")}
+            <small>{t("detail_segment_sub")}</small>
           </span>
         </div>
         <div className="mia__detail">
           <span className="mia__detail-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
           </span>
-          <span className="mia__detail-label">Tamaño del segmento</span>
-          <span className="mia__detail-val">248 clientes</span>
+          <span className="mia__detail-label">{t("detail_segment_size_label")}</span>
+          <span className="mia__detail-val">{t("detail_segment_size_value")}</span>
         </div>
         <div className="mia__detail">
           <span className="mia__detail-icon">
             <CalendarIcon />
           </span>
-          <span className="mia__detail-label">Reservas esperadas</span>
-          <span className="mia__detail-val">26–34</span>
+          <span className="mia__detail-label">{t("detail_expected_label")}</span>
+          <span className="mia__detail-val">{t("detail_expected_value")}</span>
         </div>
         <div className="mia__detail">
           <span className="mia__detail-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5h4.5a2 2 0 010 4H10a2 2 0 000 4h4.5"/></svg>
           </span>
-          <span className="mia__detail-label">Ingreso recuperado (estimado)</span>
+          <span className="mia__detail-label">{t("detail_revenue_label")}</span>
           <span className="mia__detail-val">
-            $1.850.000
-            <small>– $2.450.000</small>
+            {t("detail_revenue_value")}
+            <small>{t("detail_revenue_value_range")}</small>
           </span>
         </div>
       </div>
 
       <button className="mia__cta" type="button">
         <SparkleIcon size={12} color="#FFF6EE" />
-        Aprobar campaña
+        {t("cta_approve")}
       </button>
       <button className="mia__cta-edit" type="button">
-        Editar mensaje e imagen
+        {t("cta_edit")}
         <span className="mia__cta-edit-arrow">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
         </span>
@@ -106,25 +102,28 @@ const MarketingScreen = () => (
     <div className="mia__nav">
       <div className="mia__nav-item">
         <CalendarIcon />
-        Agenda
+        {t("nav_agenda")}
       </div>
       <div className="mia__nav-item">
         <PeopleIcon variant="group" />
-        Clientes
+        {t("nav_clientes")}
       </div>
       <div className="mia__nav-item is-active">
         <SparkleIcon size={16} color="currentColor" />
-        Marketing IA
+        {t("nav_marketing")}
       </div>
       <div className="mia__nav-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        Más
+        {t("nav_more")}
       </div>
     </div>
   </div>
-);
+  );
+};
 
 export default function MarketingIASection() {
+  const t = useTranslations("marketing_ia");
+  const features = t.raw("features") as string[];
   return (
     <section className="mkt" id="marketing">
       <div className="mkt__atmo" aria-hidden="true" />
@@ -132,24 +131,22 @@ export default function MarketingIASection() {
         <div className="mkt__split">
 
           <div className="mkt__copy">
-            <div className="mkt__eyebrow" aria-label="Marketing IA">
-              <span className="mkt__eyebrow-num">02</span>
-              <span className="mkt__eyebrow-text">Marketing IA</span>
+            <div className="mkt__eyebrow" aria-label={t("eyebrow")}>
+              <span className="mkt__eyebrow-num">{t("eyebrow_num")}</span>
+              <span className="mkt__eyebrow-text">{t("eyebrow")}</span>
             </div>
 
             <h2 className="mkt__h1">
-              Llena tus días lentos.<br/>
-              <em>Recupera clientes que se fueron.</em>
+              {t("h1_line1")}<br/>
+              {t.rich("h1_line2", { em: (chunks) => <em>{chunks}</em> })}
             </h2>
 
             <p className="mkt__lead">
-              Detecta huecos en tu agenda, agrupa clientes que llevan
-              tiempo sin venir y arma campañas listas para enviar por
-              WhatsApp. Tú apruebas; ella manda y mide qué funcionó.
+              {t("lead")}
             </p>
 
             <ul className="mkt__features">
-              {FEATURES.map((f, i) => (
+              {features.map((f, i) => (
                 <li key={i} className="mkt__feat">
                   <span className="mkt__feat-num">{String(i + 1).padStart(2, "0")}</span>
                   <span className="mkt__feat-text">{f}</span>
@@ -161,7 +158,7 @@ export default function MarketingIASection() {
               <span className="mkt__plan-icon">
                 <SparkleIcon size={14} color="currentColor" />
               </span>
-              Personaliza el tono para tu marca y tu clientela.
+              {t("plan_note")}
             </span>
           </div>
 

@@ -2,6 +2,7 @@
 // Ported from Downloads/Resultados Dark Section.html. Visual reference: Image #14
 // (left-aligned head, no brand wordmark, no subtitle, no bottom footer, mint eyebrow + numbers).
 
+import { useTranslations } from "next-intl";
 import SparkleIcon from "./primitives/SparkleIcon";
 import CalendarIcon from "./primitives/icons/CalendarIcon";
 import ChatBubbleIcon from "./primitives/icons/ChatBubbleIcon";
@@ -11,7 +12,6 @@ import type { ReactNode } from "react";
 type Card = {
   num: string;
   icon: ReactNode;
-  headline: ReactNode;
 };
 
 const CARDS: Card[] = [
@@ -24,17 +24,14 @@ const CARDS: Card[] = [
         <path d="M18 8v6M15 11h6"/>
       </svg>
     ),
-    headline: <>Recupera <em>clientes</em> que dejaron de venir.</>,
   },
   {
     num: "02",
     icon: <CalendarIcon strokeWidth={1.8} />,
-    headline: <>Llena tus <em>días lentos</em> automáticamente.</>,
   },
   {
     num: "03",
     icon: <ChatBubbleIcon />,
-    headline: <>Recordatorios <em>24h antes</em>. Cero ausencias.</>,
   },
   {
     num: "04",
@@ -44,16 +41,15 @@ const CARDS: Card[] = [
         <path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/>
       </svg>
     ),
-    headline: <>Tu <em>página de reservas</em>, con tu marca.</>,
   },
   {
     num: "05",
     icon: <WhatsAppIcon />,
-    headline: <><em>WhatsApp</em> oficial de Meta. Sin bloqueos ni improvisación.</>,
   },
 ];
 
 export default function ResultadosSection() {
+  const t = useTranslations("resultados");
   return (
     <section className="res">
       <div className="res__arc-left" aria-hidden="true" />
@@ -63,12 +59,12 @@ export default function ResultadosSection() {
         <div className="res__head">
           <span className="res__eyebrow">
             <SparkleIcon size={12} color="currentColor" />
-            Crece tu negocio
+            {t("eyebrow")}
             <SparkleIcon size={12} color="currentColor" />
           </span>
           <h2 className="res__h1">
-            Resultados claros,<br />
-            <em>no promesas vacías.</em>
+            {t("h1_line1")}<br />
+            {t.rich("h1_line2", { em: (chunks) => <em>{chunks}</em> })}
           </h2>
         </div>
 
@@ -83,7 +79,9 @@ export default function ResultadosSection() {
                   <SparkleIcon size={12} color="currentColor" />
                 </span>
               </div>
-              <h3 className="res-card__headline">{c.headline}</h3>
+              <h3 className="res-card__headline">
+                {t.rich(`cards.${c.num}`, { em: (chunks) => <em>{chunks}</em> })}
+              </h3>
             </article>
           ))}
         </div>

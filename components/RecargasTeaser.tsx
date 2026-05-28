@@ -11,11 +11,17 @@
    ============================================================ */
 
 import * as React from 'react';
+import { useTranslations } from 'next-intl';
 import SparkleIcon from './primitives/SparkleIcon';
 import CheckIcon from './primitives/icons/CheckIcon';
 import WhatsAppIcon from './primitives/icons/WhatsAppIcon';
 
+type PackTier = { amt: string; price: string };
+
 export default function RecargasTeaser() {
+  const t = useTranslations('recargas');
+  const messagesTiers = t.raw('packs.messages.tiers') as PackTier[];
+  const looksTiers = t.raw('packs.looks.tiers') as PackTier[];
   return (
     <section className="rec">
       <div className="rec__inner">
@@ -24,24 +30,23 @@ export default function RecargasTeaser() {
         <div className="rec__copy">
           <span className="rec__eyebrow">
             <SparkleIcon size={12} color="currentColor" />
-            Recargas y extras
+            {t('eyebrow')}
           </span>
 
           <h2 className="rec__h1">
-            ¿Mes con más movimiento?<br/>
-            <em>Compra recargas solo cuando las necesites.</em>
+            {t('h1.line1')}<br/>
+            {t.rich('h1.line2', { em: (chunks) => <em>{chunks}</em> })}
           </h2>
 
           <p className="rec__lead">
-            Maestro incluye 500 mensajes WhatsApp y 200 Looks IA cada mes.
-            ¿Necesitas más? Recarga sin cambiar de plan.
+            {t('lead')}
           </p>
 
           <span className="rec__micro">
             <span className="rec__micro-check" aria-hidden="true">
               <CheckIcon strokeWidth={3} />
             </span>
-            Las recargas solo se pagan cuando las usas.
+            {t('micro')}
           </span>
         </div>
 
@@ -55,24 +60,18 @@ export default function RecargasTeaser() {
                   <WhatsAppIcon />
                 </span>
                 <div className="rpack__title-block">
-                  <h3 className="rpack__name">Mensajes WhatsApp</h3>
-                  <p className="rpack__desc">Conversaciones extra cuando tu mes se llena.</p>
+                  <h3 className="rpack__name">{t('packs.messages.title')}</h3>
+                  <p className="rpack__desc">{t('packs.messages.sub')}</p>
                 </div>
               </div>
               <hr className="rpack__hr"/>
               <div className="rpack__tiers">
-                <div className="rpack__tier">
-                  <span className="rpack__tier-amt">200 <small>msjs</small></span>
-                  <span className="rpack__tier-price">$12.000</span>
-                </div>
-                <div className="rpack__tier">
-                  <span className="rpack__tier-amt">500 <small>msjs</small></span>
-                  <span className="rpack__tier-price">$25.000</span>
-                </div>
-                <div className="rpack__tier">
-                  <span className="rpack__tier-amt">1.000 <small>msjs</small></span>
-                  <span className="rpack__tier-price">$45.000</span>
-                </div>
+                {messagesTiers.map((tier, i) => (
+                  <div key={i} className="rpack__tier">
+                    <span className="rpack__tier-amt">{tier.amt} <small>{t('packs.messages.unit')}</small></span>
+                    <span className="rpack__tier-price">{tier.price}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </article>
@@ -84,24 +83,18 @@ export default function RecargasTeaser() {
                   <SparkleIcon size={26} color="currentColor" />
                 </span>
                 <div className="rpack__title-block">
-                  <h3 className="rpack__name">Looks IA</h3>
-                  <p className="rpack__desc">Estilos, cortes y color generados desde una selfie.</p>
+                  <h3 className="rpack__name">{t('packs.looks.title')}</h3>
+                  <p className="rpack__desc">{t('packs.looks.sub')}</p>
                 </div>
               </div>
               <hr className="rpack__hr"/>
               <div className="rpack__tiers">
-                <div className="rpack__tier">
-                  <span className="rpack__tier-amt">100 <small>looks</small></span>
-                  <span className="rpack__tier-price">$15.000</span>
-                </div>
-                <div className="rpack__tier">
-                  <span className="rpack__tier-amt">300 <small>looks</small></span>
-                  <span className="rpack__tier-price">$35.000</span>
-                </div>
-                <div className="rpack__tier">
-                  <span className="rpack__tier-amt">500 <small>looks</small></span>
-                  <span className="rpack__tier-price">$50.000</span>
-                </div>
+                {looksTiers.map((tier, i) => (
+                  <div key={i} className="rpack__tier">
+                    <span className="rpack__tier-amt">{tier.amt} <small>{t('packs.looks.unit')}</small></span>
+                    <span className="rpack__tier-price">{tier.price}</span>
+                  </div>
+                ))}
               </div>
             </div>
           </article>

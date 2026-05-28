@@ -130,5 +130,334 @@
     "submit_idle": "Book my demo",
     "submit_loading": "Sending…",
     "micro": "No card · Response in under 24 h"
+  },
+  "vertical": {
+    "barberia": {
+      "cta": "Calendar ready",
+      "name": "Barbería",
+      "services": "Cuts and beard · Classic shave"
+    },
+    "clinica": {
+      "cta": "Calendar ready",
+      "name": "Clínica estética",
+      "services": "Botox · Fillers"
+    },
+    "salon": {
+      "cta": "Calendar ready",
+      "name": "Salón de belleza",
+      "services": "Color and styling · Highlights"
+    },
+    "section": {
+      "aria_cards": "Supported industries",
+      "foot": "One platform. <em>Each business</em> with its own voice.",
+      "h1": "Built for <em>your industry.</em>",
+      "sub": "Barbershop, salon, nails, spa, or clinic — Acomply adapts bookings, services, customers, and WhatsApp to each business's rhythm."
+    },
+    "spa": {
+      "cta": "Calendar ready",
+      "name": "Spa & wellness",
+      "services": "Relaxing massage · Facial cleansing"
+    },
+    "unas": {
+      "cta": "Calendar ready",
+      "name": "Uñas",
+      "services": "Manicure · Gel nails"
+    }
+  },
+  "mia": {
+    "aria_section": "Mía — Acomply's AI",
+    "eyebrow": "Your AI assistant",
+    "hero_name": "Meet",
+    "hero_tagline": "Acomply's artificial intelligence. One assistant that welcomes your customers, promotes your business, and understands your numbers — all from WhatsApp.",
+    "steps": {
+      "step1": {
+        "desc": "Mía responds with your real hours, confirms appointments, and adapts her tone to each customer — regional Colombian tones from coastal to highland, formal to casual.",
+        "eyebrow": "Mía receives",
+        "title": "Replies to every WhatsApp, even at 2 a.m."
+      },
+      "step2": {
+        "desc": "Mía spots gaps in your calendar, groups dormant customers, and sends promos on WhatsApp. You approve, she sends.",
+        "eyebrow": "Mía promotes",
+        "title": "Fills your slow days automatically."
+      },
+      "step3": {
+        "desc": "Mía answers with real data: sales, customers, slow days. No jargon, no guesses.",
+        "eyebrow": "Mía analyzes",
+        "title": "Ask anything about your business."
+      },
+      "step4": {
+        "desc": "Mía works nonstop for you — receiving, promoting, and analyzing — so your business grows while you serve customers.",
+        "eyebrow": "Grow your business",
+        "title": "More bookings, fewer gaps, better decisions."
+      }
+    }
+  },
+  "marketing_ia": {
+    "eyebrow": "Marketing AI",
+    "eyebrow_num": "02",
+    "features": [
+      "Segments customers by frequency, spend, and service",
+      "Suggests promos based on slow days",
+      "Generates message and image in your style",
+      "Measures bookings and recovered revenue"
+    ],
+    "h1_line1": "Fill your slow days.",
+    "h1_line2": "<em>Win back customers who left.</em>",
+    "lead": "Spots gaps in your calendar, groups customers who haven't visited in a while, and prepares campaigns ready to send on WhatsApp. You approve; she sends and measures what worked.",
+    "plan_note": "Customize the tone for your brand and your clientele.",
+    "screen": {
+      "campaign_eyebrow": "Campaign",
+      "cta_approve": "Approve campaign",
+      "cta_edit": "Edit message and image",
+      "detail_revenue_label": "Recovered revenue (estimated)",
+      "detail_revenue_value": "$1.850.000",
+      "detail_revenue_value_range": "– $2.450.000",
+      "detail_segment_label": "Segment",
+      "detail_segment_sub": "Inactive customers 30–90 days",
+      "detail_segment_size_label": "Segment size",
+      "detail_segment_size_value": "248 customers",
+      "detail_expected_label": "Expected bookings",
+      "detail_expected_value": "26–34",
+      "nav_agenda": "Calendar",
+      "nav_clientes": "Customers",
+      "nav_marketing": "Marketing AI",
+      "nav_more": "More",
+      "promo_title": "Come back this week and your next visit is <em>20% off.</em>",
+      "row_chip": "Ready to review",
+      "row_title": "Campaign draft",
+      "sugg_strong": "Suggested by Analyst",
+      "sugg_sub": "Tuesdays and Wednesdays are slow.",
+      "title": "Marketing AI"
+    }
+  },
+  "analisis": {
+    "aria_eyebrow": "Analyst assistant",
+    "chart_label": "Sales by day of the week",
+    "days": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "tue_tip": "34% less",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    },
+    "eyebrow_num": "03",
+    "eyebrow_text": "Analyst assistant",
+    "features": [
+      {
+        "title": "Connected to your data in real time",
+        "desc": "Sales, appointments, customers, products, and more. Always up to date."
+      },
+      {
+        "title": "Answers in plain language, no jargon",
+        "desc": "Ask questions like you'd ask your best employee."
+      },
+      {
+        "title": "Uses only real numbers from your business",
+        "desc": "Nothing made up. Everything based on what's actually happening."
+      },
+      {
+        "title": "Every answer comes with a clear action",
+        "desc": "Not just data. Recommendations you can act on."
+      }
+    ],
+    "h1_line1": "Ask anything",
+    "h1_line2": "of <em>your own business.</em>",
+    "lead": "Your analyst assistant understands your business and answers with real data. No jargon, no spreadsheets, no guesses. Just clarity so you make better decisions.",
+    "plan_note": "Available on Maestro and Élite",
+    "quote": "“It's like having a manager who never sleeps and always tells you the truth.”",
+    "screen": {
+      "compose_placeholder": "Ask anything…",
+      "lead_strong": "Tuesdays",
+      "lead_text_a": "",
+      "lead_text_b": " are your slowest days.",
+      "lead_text_c": "On average you sell ",
+      "lead_text_em": "34% less",
+      "lead_text_d": " than the rest of the week.",
+      "question": "Which day of the week do I sell the least?",
+      "rec_cta": "Create a Tuesday campaign",
+      "rec_label": "Recommendation",
+      "rec_text": "You could fill your Tuesdays with a reminder campaign for customers who haven't visited in over 30 days.",
+      "title": "Analyst assistant",
+      "title_sub": "Connected to your data in real time"
+    },
+    "stats": {
+      "decisions_eyebrow": "Decisions",
+      "decisions_headline_em": "clearer",
+      "decisions_sub": "and faster",
+      "results_headline": "Better results,",
+      "results_sub": "less effort",
+      "save_eyebrow": "Save",
+      "save_headline_em": "5-10 hours",
+      "save_sub": "a week"
+    }
+  },
+  "resultados": {
+    "cards": {
+      "01": "Win back <em>customers</em> who stopped coming.",
+      "02": "Fill your <em>slow days</em> automatically.",
+      "03": "Reminders <em>24h before</em>. Zero no-shows.",
+      "04": "Your <em>booking page</em>, with your brand.",
+      "05": "Official <em>WhatsApp</em> from Meta. No blocks, no workarounds."
+    },
+    "eyebrow": "Grow your business",
+    "h1_line1": "Clear results,",
+    "h1_line2": "<em>no empty promises.</em>"
+  },
+  "pricing": {
+    "eyebrow": "Pick your plan.",
+    "h1_line1": "Pick your plan.",
+    "h1_line2": "<em>Cancel anytime.</em>",
+    "slider_question": "How many people in your team?",
+    "sub": "Three plans. No long contracts, no fine print. AI starts with Maestro.",
+    "suggestion": {
+      "label": "Best fit:",
+      "esencial": "Esencial",
+      "maestro": "Maestro",
+      "elite": "Élite"
+    },
+    "team_size_aria": "Team size",
+    "tier_labels": {
+      "esencial": "Esencial",
+      "maestro": "Maestro",
+      "elite": "Élite"
+    },
+    "badge_recommended": "Recommended",
+    "badge_recommended_for_you": "Recommended for you",
+    "trust_strip": {
+      "contracts": {
+        "title": "No long contracts",
+        "sub": "Cancel anytime."
+      },
+      "data": {
+        "title": "Your data, always yours",
+        "sub": "Enterprise-grade security."
+      },
+      "support": {
+        "title": "Real support",
+        "sub": "People who understand you."
+      }
+    },
+    "tier_esencial": {
+      "name": "Acomply Esencial",
+      "sell": "For one-person shops. No surprises, no AI.",
+      "period": "/mo · billed monthly",
+      "cta": "Start with Esencial",
+      "features": [
+        "Public booking page",
+        "Automatic WhatsApp reminders",
+        "Individual calendar",
+        "Reviews and ratings",
+        "Work gallery",
+        "Customer management"
+      ]
+    },
+    "tier_maestro": {
+      "name": "Acomply Maestro",
+      "sell": "To grow up to 5 people. AI included.",
+      "period": "/mo · billed monthly",
+      "cta": "Start with Maestro",
+      "features": {
+        "all_esencial": "Everything in Esencial",
+        "up_to_5": "Up to 5 professionals",
+        "section_ai": "AI included",
+        "credits_label": "500 WhatsApp messages + 200 AI Looks",
+        "credits_note": "Free every month",
+        "receptionist_label": "AI Receptionist on WhatsApp",
+        "receptionist_note": "Books for you",
+        "marketing_label": "Marketing AI",
+        "marketing_note": "Generates promos, sends them, attributes bookings",
+        "analyst_label": "Analyst assistant",
+        "analyst_note": "Chat with your business",
+        "qr": "AI-styled QR code",
+        "section_ops": "Operations",
+        "expenses": "Income & expense tracking",
+        "reports": "Financial reports",
+        "inventory": "Inventory management"
+      }
+    },
+    "tier_elite": {
+      "name": "Acomply Élite",
+      "sell": "For unlimited teams that need more.",
+      "period": "/mo · billed monthly",
+      "cta": "Start with Élite",
+      "features": [
+        "Everything in Maestro",
+        "Unlimited professionals",
+        "Priority support",
+        "Advanced brand customization"
+      ]
+    }
+  },
+  "recargas": {
+    "eyebrow": "Top-ups and extras",
+    "h1": {
+      "line1": "Busy month?",
+      "line2": "<em>Buy top-ups only when you need them.</em>"
+    },
+    "lead": "Maestro includes 500 WhatsApp messages and 200 AI Looks each month. Need more? Top up without changing plans.",
+    "micro": "Top-ups are paid only when you use them.",
+    "packs": {
+      "messages": {
+        "title": "WhatsApp messages",
+        "sub": "Extra conversations when your month fills up.",
+        "unit": "msgs",
+        "tiers": [
+          { "amt": "200", "price": "$12.000" },
+          { "amt": "500", "price": "$25.000" },
+          { "amt": "1.000", "price": "$45.000" }
+        ]
+      },
+      "looks": {
+        "title": "AI Looks",
+        "sub": "Styles, cuts, and color generated from a selfie.",
+        "unit": "looks",
+        "tiers": [
+          { "amt": "100", "price": "$15.000" },
+          { "amt": "300", "price": "$35.000" },
+          { "amt": "500", "price": "$50.000" }
+        ]
+      }
+    }
+  },
+  "faq": {
+    "eyebrow": "Frequently asked questions",
+    "items": [
+      {
+        "q": "Can my WhatsApp get blocked?",
+        "a": "<strong>No.</strong> We use the official WhatsApp Business API (Meta). We don't clone numbers or operate in gray areas. Your account and your customers' accounts are protected and comply with the platform's rules."
+      },
+      {
+        "q": "Do I have to learn technology?",
+        "a": "No. If you know how to send an audio on WhatsApp, you know how to use Acomply. We help you with the initial setup in a 30-minute call, and from then on everything runs from your phone."
+      },
+      {
+        "q": "Does it work if I work alone, without a team?",
+        "a": "Yes. <strong>Acomply Esencial</strong> is designed for exactly that: one person, no AI but the full booking, reminders, and payments system. If you grow later or want the AI to reply for you, you upgrade to Maestro and keep the same data."
+      },
+      {
+        "q": "What happens to my customers' data?",
+        "a": "Your data is yours. We comply with <strong>Law 1581 of 2012 (Habeas Data — Colombia's data protection law)</strong>, encrypt the information, and only send marketing messages to customers who have given explicit consent. You can export or delete your data anytime."
+      },
+      {
+        "q": "Can the AI make up answers or numbers?",
+        "a": "No. The <strong>AI Receptionist</strong> only confirms real hours from your calendar — never improvises. The <strong>Analyst assistant</strong> answers only with data that exists in your account — if it doesn't know something, it says so. Zero hallucinations."
+      },
+      {
+        "q": "Can I cancel anytime?",
+        "a": "Yes, anytime, with no penalties and no paperwork. You cancel from the app and your data stays accessible for 60 days if you decide to come back."
+      },
+      {
+        "q": "How long does it take to get up and running?",
+        "a": "Setup in <strong>15 minutes</strong>. We connect your WhatsApp, load your services and hours, and your booking page is ready. If you move to Maestro, the AI learns your tone in a short session."
+      }
+    ],
+    "sub": "If your question isn't here, WhatsApp us and we'll reply in minutes — not a bot, a real person on the team.",
+    "title": {
+      "line1": "What almost everyone",
+      "line2": "<em>asks us first.</em>"
+    }
   }
 }

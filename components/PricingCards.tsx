@@ -5,6 +5,7 @@
 // the matching card. Plans canonical from acomply-app/lib/plans.ts — do not drift.
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import PricingCardEsencial from "./PricingCardEsencial";
 import PricingCardMaestro from "./PricingCardMaestro";
 import PricingCardDark from "./PricingCardDark";
@@ -22,15 +23,11 @@ const recommendTier = (n: number): Tier => {
   return "elite";
 };
 
-const TIER_LABEL: Record<Tier, string> = {
-  esencial: "Esencial",
-  maestro: "Maestro",
-  elite: "Élite",
-};
-
 export default function PricingCards() {
   const [team, setTeam] = useState<number>(3);
   const tier = recommendTier(team);
+  const t = useTranslations("pricing");
+  const tElite = useTranslations("pricing.tier_elite");
 
   const tickIndex = TICK_VALUES.reduce<number>(
     (best, v, i) =>
@@ -52,27 +49,28 @@ export default function PricingCards() {
     tier === "esencial" ? "coral" : tier === "maestro" ? "amber" : "mint"
   }`;
 
+  const eliteFeatures = tElite.raw("features") as string[];
+
   return (
     <section className="ppage" id="precios">
       <div className="ppage__inner">
 
         <div className="ppage__hero">
           <h1 className="ppage__h1">
-            Elige tu plan.<br />
-            <em>Cancela cuando quieras.</em>
+            {t("h1_line1")}<br />
+            {t.rich("h1_line2", { em: (chunks) => <em>{chunks}</em> })}
             <span className="ppage__h1-spark">
               <SparkleIcon size={28} color="currentColor" />
             </span>
           </h1>
           <p className="ppage__sub">
-            Tres planes. Sin contratos largos, sin letras chiquitas.
-            La IA está disponible desde Maestro.
+            {t("sub")}
           </p>
         </div>
 
         <div className="ppslider">
           <div className="ppslider__row">
-            <div className="ppslider__label">¿Cuántas personas en tu equipo?</div>
+            <div className="ppslider__label">{t("slider_question")}</div>
             <div className="ppslider__track-wrap">
               <div className="ppslider__track" />
               <div className="ppslider__fill" style={{ width: `${visualPct}%` }} />
@@ -107,7 +105,7 @@ export default function PricingCards() {
                 value={team}
                 onChange={handleChange}
                 className="ppslider__range"
-                aria-label="Tamaño del equipo"
+                aria-label={t("team_size_aria")}
               />
             </div>
           </div>
@@ -115,9 +113,9 @@ export default function PricingCards() {
             <span className="ppslider__suggestion-icon">
               <PeopleIcon variant="group" strokeWidth={1.8} />
             </span>
-            Te queda:&nbsp;
+            {t("suggestion.label")}&nbsp;
             <span className={`ppslider__suggestion-tier ${tierColorClass}`}>
-              {TIER_LABEL[tier]}
+              {t(`suggestion.${tier}`)}
             </span>
           </span>
         </div>
@@ -129,22 +127,18 @@ export default function PricingCards() {
             />
             <PricingCardMaestro
               className={tier === "maestro" ? "is-recommended" : ""}
-              badge={tier === "maestro" ? "Recomendado para ti" : "Recomendado"}
+              badge={tier === "maestro" ? t("badge_recommended_for_you") : t("badge_recommended")}
             />
             <PricingCardDark
-              tier="Élite"
-              name="Acomply Élite"
-              sell="Para equipos sin límite que necesitan más."
+              tier={t("tier_labels.elite")}
+              name={tElite("name")}
+              sell={tElite("sell")}
               price="79.900"
-              features={[
-                { label: "Todo lo del plan Maestro" },
-                { label: "Profesionales ilimitados" },
-                { label: "Soporte prioritario" },
-                { label: "Personalización avanzada de marca" },
-              ]}
+              period={tElite("period")}
+              features={eliteFeatures.map((label) => ({ label }))}
               accent="mint"
               glowDirection="top-right"
-              ctaLabel="Empieza con Élite"
+              ctaLabel={tElite("cta")}
               ctaHref="#demo"
               className={tier === "elite" ? "is-recommended" : ""}
             />
@@ -160,8 +154,8 @@ export default function PricingCards() {
               </svg>
             </span>
             <div className="pptrust__body">
-              <div className="pptrust__name">Sin contratos largos</div>
-              <div className="pptrust__desc">Cancela cuando quieras.</div>
+              <div className="pptrust__name">{t("trust_strip.contracts.title")}</div>
+              <div className="pptrust__desc">{t("trust_strip.contracts.sub")}</div>
             </div>
           </div>
           <div className="pptrust__item">
@@ -172,8 +166,8 @@ export default function PricingCards() {
               </svg>
             </span>
             <div className="pptrust__body">
-              <div className="pptrust__name">Tus datos, siempre tuyos</div>
-              <div className="pptrust__desc">Seguridad de nivel empresarial.</div>
+              <div className="pptrust__name">{t("trust_strip.data.title")}</div>
+              <div className="pptrust__desc">{t("trust_strip.data.sub")}</div>
             </div>
           </div>
           <div className="pptrust__item">
@@ -183,8 +177,8 @@ export default function PricingCards() {
               </svg>
             </span>
             <div className="pptrust__body">
-              <div className="pptrust__name">Soporte real</div>
-              <div className="pptrust__desc">Personas que te entienden.</div>
+              <div className="pptrust__name">{t("trust_strip.support.title")}</div>
+              <div className="pptrust__desc">{t("trust_strip.support.sub")}</div>
             </div>
           </div>
         </div>

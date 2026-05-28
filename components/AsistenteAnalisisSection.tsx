@@ -2,22 +2,28 @@
 // Verbatim port of Downloads/Asistente de Análisis Section.html.
 // PhoneMockup primitive from the source isn't shipped — using project's PhoneFrame instead.
 
+import { useTranslations } from "next-intl";
 import PhoneFrame from "./primitives/PhoneFrame";
 import SparkleIcon from "./primitives/SparkleIcon";
 import BarChartIcon from "./primitives/icons/BarChartIcon";
 import PeopleIcon from "./primitives/icons/PeopleIcon";
 
-const DAYS: ReadonlyArray<{ d: string; h: number; low?: boolean; tip?: string }> = [
-  { d: "Lun", h: 78 },
-  { d: "Mar", h: 32, low: true, tip: "34% menos" },
-  { d: "Mié", h: 60 },
-  { d: "Jue", h: 70 },
-  { d: "Vie", h: 82 },
-  { d: "Sáb", h: 92 },
-  { d: "Dom", h: 98 },
+type DayDef = { dayKey: string; h: number; low?: boolean; tipKey?: string };
+
+const DAYS: ReadonlyArray<DayDef> = [
+  { dayKey: "mon", h: 78 },
+  { dayKey: "tue", h: 32, low: true, tipKey: "tue_tip" },
+  { dayKey: "wed", h: 60 },
+  { dayKey: "thu", h: 70 },
+  { dayKey: "fri", h: 82 },
+  { dayKey: "sat", h: 92 },
+  { dayKey: "sun", h: 98 },
 ];
 
 function AsistenteScreen() {
+  const t = useTranslations("analisis");
+  const ts = useTranslations("analisis.screen");
+  const td = useTranslations("analisis.days");
   return (
     <div className="asn">
       <div className="asn__top">
@@ -25,8 +31,8 @@ function AsistenteScreen() {
           <SparkleIcon size={18} color="#0F6F5E" />
         </span>
         <div className="asn__title">
-          Asistente de análisis
-          <small>Conectado a tus datos en tiempo real</small>
+          {ts("title")}
+          <small>{ts("title_sub")}</small>
         </div>
         <span className="asn__more" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
@@ -34,43 +40,43 @@ function AsistenteScreen() {
       </div>
 
       <div className="asn__body">
-        <div className="asn__question">¿Qué día de la semana vendo menos?</div>
+        <div className="asn__question">{ts("question")}</div>
 
         <div className="asn__card">
           <p className="asn__lead">
-            Los <strong>martes</strong> son tus días más flojos.<br />
-            Vendes en promedio <em>34% menos</em> que el resto de los días.
+            {ts("lead_text_a")}<strong>{ts("lead_strong")}</strong>{ts("lead_text_b")}<br />
+            {ts("lead_text_c")}<em>{ts("lead_text_em")}</em>{ts("lead_text_d")}
           </p>
           <div className="asn__divider" />
-          <span className="asn__chart-label">Ventas por día de la semana</span>
+          <span className="asn__chart-label">{t("chart_label")}</span>
           <div className="asn__chart">
             {DAYS.map((day, i) => (
               <div key={i} className={`asn__bar-wrap${day.low ? " is-low" : ""}`}>
-                {day.tip && <span className="asn__bar-tip">{day.tip}</span>}
+                {day.tipKey && <span className="asn__bar-tip">{td(day.tipKey)}</span>}
                 <span
                   className={`asn__bar${day.low ? " is-low" : ""}`}
                   style={{ height: `${day.h}%` }}
                 />
-                <span className="asn__bar-day">{day.d}</span>
+                <span className="asn__bar-day">{td(day.dayKey)}</span>
               </div>
             ))}
           </div>
         </div>
 
         <div className="asn__rec">
-          <span className="asn__rec-label">Recomendación</span>
+          <span className="asn__rec-label">{ts("rec_label")}</span>
           <p className="asn__rec-text">
-            Podrías llenar tus martes con una campaña de recordatorio para clientes que no han venido en más de 30 días.
+            {ts("rec_text")}
           </p>
           <button className="asn__rec-cta" type="button">
-            Crear campaña para los martes
+            {ts("rec_cta")}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
           </button>
         </div>
       </div>
 
       <div className="asn__compose">
-        <span className="asn__compose-input">Pregunta lo que quieras…</span>
+        <span className="asn__compose-input">{ts("compose_placeholder")}</span>
         <span className="asn__compose-btn" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 11l18-8-8 18-2-7-8-3z"/></svg>
         </span>
@@ -79,15 +85,17 @@ function AsistenteScreen() {
   );
 }
 
-const FEATURES = [
+type FeatureDef = { titleKey: string; descKey: string; icon: React.ReactNode };
+
+const FEATURES_META: ReadonlyArray<FeatureDef> = [
   {
-    title: "Conectado a tus datos en tiempo real",
-    desc: "Ventas, citas, clientes, productos y más. Siempre actualizado.",
+    titleKey: "title",
+    descKey: "desc",
     icon: <BarChartIcon bars={3} />,
   },
   {
-    title: "Responde en español, sin tecnicismos",
-    desc: "Haz preguntas como si le hablaras a tu mejor empleado.",
+    titleKey: "title",
+    descKey: "desc",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
         <path d="M7 18l-3 2 1-4a7 7 0 117 3h-2" />
@@ -96,8 +104,8 @@ const FEATURES = [
     ),
   },
   {
-    title: "Solo usa números reales de tu negocio",
-    desc: "Nada inventado. Todo basado en lo que ya pasa en tu negocio.",
+    titleKey: "title",
+    descKey: "desc",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20 7L9 18l-5-5" />
@@ -105,8 +113,8 @@ const FEATURES = [
     ),
   },
   {
-    title: "Cada respuesta trae una acción clara",
-    desc: "No solo datos. También recomendaciones para actuar.",
+    titleKey: "title",
+    descKey: "desc",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 19V5" />
@@ -117,6 +125,8 @@ const FEATURES = [
 ];
 
 export default function AsistenteAnalisisSection() {
+  const t = useTranslations("analisis");
+  const features = t.raw("features") as Array<{ title: string; desc: string }>;
   return (
     <section className="ana">
       <div className="ana__atmo" aria-hidden="true" />
@@ -124,29 +134,27 @@ export default function AsistenteAnalisisSection() {
 
         <div className="ana__split">
           <div className="ana__copy">
-            <span className="ana__eyebrow" aria-label="Asistente de análisis">
-              <span className="ana__eyebrow-num">03</span>
-              <span className="ana__eyebrow-text">Asistente de análisis</span>
+            <span className="ana__eyebrow" aria-label={t("aria_eyebrow")}>
+              <span className="ana__eyebrow-num">{t("eyebrow_num")}</span>
+              <span className="ana__eyebrow-text">{t("eyebrow_text")}</span>
             </span>
 
             <h2 className="ana__h1">
-              Pregúntale lo que sea<br />
-              a <em>tu propio negocio.</em>
+              {t("h1_line1")}<br />
+              {t.rich("h1_line2", { em: (chunks) => <em>{chunks}</em> })}
             </h2>
 
             <p className="ana__lead">
-              Tu asistente de análisis entiende tu negocio y te responde con
-              datos reales. Sin tecnicismos, sin hojas de cálculo, sin inventos.
-              Solo claridad para que tomes mejores decisiones.
+              {t("lead")}
             </p>
 
             <ul className="ana__features">
-              {FEATURES.map((f, i) => (
+              {FEATURES_META.map((f, i) => (
                 <li key={i} className="ana__feat">
                   <span className="ana__feat-icon" aria-hidden="true">{f.icon}</span>
                   <div className="ana__feat-body">
-                    <h3 className="ana__feat-title">{f.title}</h3>
-                    <p className="ana__feat-desc">{f.desc}</p>
+                    <h3 className="ana__feat-title">{features[i]?.title}</h3>
+                    <p className="ana__feat-desc">{features[i]?.desc}</p>
                   </div>
                 </li>
               ))}
@@ -154,7 +162,7 @@ export default function AsistenteAnalisisSection() {
 
             <span className="ana__plan">
               <span className="ana__plan-dot" aria-hidden="true" />
-              Disponible en Maestro y Élite
+              {t("plan_note")}
             </span>
           </div>
 
@@ -179,9 +187,9 @@ export default function AsistenteAnalisisSection() {
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
             </span>
             <div className="ana__stat-body">
-              <span className="ana__stat-eyebrow">Ahorra</span>
-              <span className="ana__stat-headline"><em>5-10 horas</em></span>
-              <span className="ana__stat-sub">a la semana</span>
+              <span className="ana__stat-eyebrow">{t("stats.save_eyebrow")}</span>
+              <span className="ana__stat-headline"><em>{t("stats.save_headline_em")}</em></span>
+              <span className="ana__stat-sub">{t("stats.save_sub")}</span>
             </div>
           </div>
 
@@ -190,9 +198,9 @@ export default function AsistenteAnalisisSection() {
               <BarChartIcon bars={3} />
             </span>
             <div className="ana__stat-body">
-              <span className="ana__stat-eyebrow">Decisiones</span>
-              <span className="ana__stat-headline"><em>más claras</em></span>
-              <span className="ana__stat-sub">y rápidas</span>
+              <span className="ana__stat-eyebrow">{t("stats.decisions_eyebrow")}</span>
+              <span className="ana__stat-headline"><em>{t("stats.decisions_headline_em")}</em></span>
+              <span className="ana__stat-sub">{t("stats.decisions_sub")}</span>
             </div>
           </div>
 
@@ -201,13 +209,13 @@ export default function AsistenteAnalisisSection() {
               <PeopleIcon variant="group" strokeWidth={1.8} />
             </span>
             <div className="ana__stat-body">
-              <span className="ana__stat-headline" style={{ fontSize: "1rem" }}>Mejores resultados,</span>
-              <span className="ana__stat-sub">menos esfuerzo</span>
+              <span className="ana__stat-headline" style={{ fontSize: "1rem" }}>{t("stats.results_headline")}</span>
+              <span className="ana__stat-sub">{t("stats.results_sub")}</span>
             </div>
           </div>
 
           <p className="ana__quote">
-            &ldquo;Es como tener un gerente que nunca duerme y siempre te dice la verdad.&rdquo;
+            {t("quote")}
           </p>
         </div>
       </div>

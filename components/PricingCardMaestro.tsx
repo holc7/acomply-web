@@ -2,6 +2,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { useTranslations } from "next-intl";
 import SparkleIcon from "./primitives/SparkleIcon";
 import BarChartIcon from "./primitives/icons/BarChartIcon";
 import ChatBubbleIcon from "./primitives/icons/ChatBubbleIcon";
@@ -27,55 +28,66 @@ type Props = {
   className?: string;
 };
 
-const DEFAULT_FEATURES: MaestroFeature[] = [
-  { label: "Todo lo del plan Esencial" },
-  { label: "Hasta 5 profesionales" },
-  { section: "IA incluida" },
-  { label: "500 mensajes WhatsApp + 200 Looks IA", note: "Gratis cada mes", icon: <GiftIcon /> },
-  { label: "Recepcionista IA en WhatsApp", note: "Reserva por ti", icon: <ChatBubbleIcon /> },
-  { label: "Marketing IA", note: "Genera promos, las envía y atribuye reservas", icon: <MegaphoneIcon /> },
-  { label: "Asistente de análisis", note: "Chat con tu negocio", icon: <BarChartIcon /> },
-  { label: "QR estilizado con IA", icon: <QrIcon /> },
-  { section: "Operaciones" },
-  { label: "Control de gastos e ingresos" },
-  { label: "Informes financieros" },
-  { label: "Manejo de inventario" },
-];
-
 export default function PricingCardMaestro({
-  tier = "Maestro",
-  name = "Acomply Maestro",
-  sell = "Para crecer hasta 5 personas. IA incluida.",
+  tier,
+  name,
+  sell,
   price = "59.900",
-  period = "/mes · facturación mensual",
-  badge = "Recomendado",
+  period,
+  badge,
   features,
-  ctaLabel = "Empieza con Maestro",
+  ctaLabel,
   ctaHref = "#demo",
   className = "",
 }: Props) {
-  const feats = features ?? DEFAULT_FEATURES;
+  const t = useTranslations("pricing");
+  const tm = useTranslations("pricing.tier_maestro");
+  const tf = useTranslations("pricing.tier_maestro.features");
+
+  const resolvedTier = tier ?? t("tier_labels.maestro");
+  const resolvedName = name ?? tm("name");
+  const resolvedSell = sell ?? tm("sell");
+  const resolvedPeriod = period ?? tm("period");
+  const resolvedCta = ctaLabel ?? tm("cta");
+  const resolvedBadge = badge === undefined ? t("badge_recommended") : badge;
+
+  const defaultFeatures: MaestroFeature[] = [
+    { label: tf("all_esencial") },
+    { label: tf("up_to_5") },
+    { section: tf("section_ai") },
+    { label: tf("credits_label"), note: tf("credits_note"), icon: <GiftIcon /> },
+    { label: tf("receptionist_label"), note: tf("receptionist_note"), icon: <ChatBubbleIcon /> },
+    { label: tf("marketing_label"), note: tf("marketing_note"), icon: <MegaphoneIcon /> },
+    { label: tf("analyst_label"), note: tf("analyst_note"), icon: <BarChartIcon /> },
+    { label: tf("qr"), icon: <QrIcon /> },
+    { section: tf("section_ops") },
+    { label: tf("expenses") },
+    { label: tf("reports") },
+    { label: tf("inventory") },
+  ];
+
+  const feats = features ?? defaultFeatures;
 
   return (
     <div className={`pcm ${className}`}>
-      {badge && (
+      {resolvedBadge && (
         <span className="pcm__badge">
           <span className="pcm__badge-spark"><SparkleIcon size={12} color="#FFF6EE" /></span>
-          {badge}
+          {resolvedBadge}
         </span>
       )}
 
-      {tier && <span className="pcm__tier">{tier}</span>}
+      {resolvedTier && <span className="pcm__tier">{resolvedTier}</span>}
 
-      <h3 className="pcm__name">{name}</h3>
-      {sell && <p className="pcm__sell">{sell}</p>}
+      <h3 className="pcm__name">{resolvedName}</h3>
+      {resolvedSell && <p className="pcm__sell">{resolvedSell}</p>}
 
       <div className="pcm__price-wrap">
         <span className="pcm__price-cur">$</span>
         <span className="pcm__price-num">{price}</span>
         <span className="pcm__price-curB">COP</span>
       </div>
-      {period && <div className="pcm__period">{period}</div>}
+      {resolvedPeriod && <div className="pcm__period">{resolvedPeriod}</div>}
 
       <hr className="pcm__hr" />
 
@@ -109,7 +121,7 @@ export default function PricingCardMaestro({
           <span className="pcm__cta-spark" aria-hidden="true">
             <SparkleIcon size={16} color="#FFF6EE" />
           </span>
-          {ctaLabel}
+          {resolvedCta}
         </a>
       </div>
     </div>

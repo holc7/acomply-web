@@ -9,12 +9,13 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import { useTranslations } from "next-intl";
+import MiaWordmark from "./primitives/MiaWordmark";
+import MiaMascot from "./primitives/MiaMascot";
 
 type Step = {
   num: string;
-  eyebrow: string;
-  title: string;
-  desc: string;
+  key: "step1" | "step2" | "step3" | "step4";
   icon: ReactNode;
 };
 
@@ -51,56 +52,25 @@ const IconTrend = () => (
 );
 
 const STEPS: Step[] = [
-  {
-    num: "01",
-    eyebrow: "Mía recibe",
-    title: "Contesta cada WhatsApp, incluso a las 2 a.m.",
-    desc: "Mía responde con tus horarios reales, confirma citas y adapta el tono a cada cliente: paisa, costeño, formal o cercano.",
-    icon: <IconChat />,
-  },
-  {
-    num: "02",
-    eyebrow: "Mía promociona",
-    title: "Llena tus días lentos automáticamente.",
-    desc: "Mía detecta huecos, agrupa clientes dormidos y envía promos por WhatsApp. Tú apruebas, ella manda.",
-    icon: <IconMegaphone />,
-  },
-  {
-    num: "03",
-    eyebrow: "Mía analiza",
-    title: "Pregúntale lo que sea a tu negocio.",
-    desc: "Mía responde con datos reales: ventas, clientes, días flojos. Sin tecnicismos, sin inventos.",
-    icon: <IconBars />,
-  },
-  {
-    num: "04",
-    eyebrow: "Crece tu negocio",
-    title: "Más reservas, menos huecos, mejores decisiones.",
-    desc: "Mía trabaja por ti sin parar — recibe, promociona y analiza — para que tu negocio crezca solo mientras tú atiendes.",
-    icon: <IconTrend />,
-  },
+  { num: "01", key: "step1", icon: <IconChat /> },
+  { num: "02", key: "step2", icon: <IconMegaphone /> },
+  { num: "03", key: "step3", icon: <IconBars /> },
+  { num: "04", key: "step4", icon: <IconTrend /> },
 ];
 
 export default function AgentsSectionV2() {
   const [selectedIdx, setSelectedIdx] = useState(0);
+  const t = useTranslations("mia");
 
   return (
-    <section className="agv2" aria-label="Mía — la IA de Acomply">
-      <img
-        className="agv2__phone"
-        src="/assets/agents-phone.webp"
-        alt="Acomply en iPhone — panel de Resumen del día con ingresos, ocupación y tendencia"
-        loading="lazy"
-        width={1254}
-        height={1254}
-      />
+    <section className="agv2" aria-label={t("aria_section")}>
+      <MiaMascot />
       <div className="agv2__inner">
         <div className="agv2__hero">
-          <span className="agv2__hero-eyebrow">Tu asistente con IA</span>
-          <h2 className="agv2__hero-name">Conoce a Mía</h2>
+          <span className="agv2__hero-eyebrow">{t("eyebrow")}</span>
+          <h2 className="agv2__hero-name">{t("hero_name")} <MiaWordmark /></h2>
           <p className="agv2__hero-tagline">
-            La inteligencia artificial de Acomply. Una sola asistente que recibe a tus clientes,
-            promociona tu negocio y entiende tus números — todo desde WhatsApp.
+            {t("hero_tagline")}
           </p>
         </div>
         <div className="agv2__timeline">
@@ -120,10 +90,10 @@ export default function AgentsSectionV2() {
                 <div className="agv2__content">
                   <div className="agv2__label">
                     <span className="agv2__number">{s.num}</span>
-                    <span className="agv2__eyebrow">{s.eyebrow}</span>
+                    <span className="agv2__eyebrow">{t(`steps.${s.key}.eyebrow`)}</span>
                   </div>
-                  <h2 className="agv2__h2">{s.title}</h2>
-                  <p className="agv2__p">{s.desc}</p>
+                  <h2 className="agv2__h2">{t(`steps.${s.key}.title`)}</h2>
+                  <p className="agv2__p">{t(`steps.${s.key}.desc`)}</p>
                 </div>
                 <div className="agv2__icon-badge" aria-hidden="true">
                   {s.icon}
@@ -199,28 +169,9 @@ export default function AgentsSectionV2() {
           line-height: 1.45;
         }
 
-        /* Phone illustration — inline above timeline on mobile, absolute-
-           positioned on the left half on desktop so the timeline column
-           breathes on the right. */
-        .agv2__phone {
-          display: block;
-          width: 100%;
-          max-width: 280px;
-          height: auto;
-          margin: 0 auto clamp(2rem, 5vw, 3rem);
-        }
-        @media (min-width: 980px) {
-          .agv2__phone {
-            position: absolute;
-            left: clamp(1rem, 4vw, 4rem);
-            top: 50%;
-            transform: translateY(-50%);
-            max-width: clamp(320px, 30vw, 440px);
-            margin: 0;
-            z-index: 1;
-            pointer-events: none;
-          }
-        }
+        /* Mía mascot CSS now lives inside MiaMascot.tsx (the interactive
+           primitive) so cursor-tracking + hover + tap behaviours travel
+           with the component. This section only positions the wrapper. */
 
         .agv2__timeline {
           position: relative;
