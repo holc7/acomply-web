@@ -23,7 +23,11 @@ export default createIntlMiddleware({
 });
 
 export const config = {
-  // Skip _next/internals, api routes, and any path with a file extension
-  // (static assets). Everything else flows through the i18n middleware.
-  matcher: ['/((?!api|_next|.*\\..*).*)'],
+  // Skip _next/internals, _vercel (analytics/insights), api routes, and
+  // any path with a file extension (static assets). Everything else
+  // flows through the i18n middleware.
+  // _vercel exclusion is defensive — the day someone adds
+  // @vercel/analytics, requests to /_vercel/insights/* must not be
+  // locale-rewritten.
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
 };

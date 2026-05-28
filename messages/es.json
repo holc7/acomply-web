@@ -1,3 +1,12 @@
 {
-  "_placeholder": "Spanish catalog — populated in Phase 3 (string extraction). Per-namespace structure per ai-reports/i18n-audit-website-2026-05-28.md."
+  "app": {
+    "title": "Acomply — Tu negocio, siempre acompañado.",
+    "description": "Acomply acompaña tu operación diaria: reservas, clientes, pagos, WhatsApp e IA en una sola plataforma para negocios de servicio.",
+    "og": {
+      "description": "Reservas, clientes, pagos, WhatsApp e IA en una sola plataforma para negocios de servicio."
+    },
+    "twitter": {
+      "description": "Reservas, clientes, pagos, WhatsApp e IA en una sola plataforma."
+    }
+  }
 }

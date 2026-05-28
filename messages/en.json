@@ -1,3 +1,12 @@
 {
-  "_placeholder": "English catalog — produced by Translator agent in Phase 4 from messages/es.json."
+  "app": {
+    "title": "Acomply — Your business, always supported.",
+    "description": "Acomply runs your day-to-day: bookings, customers, payments, WhatsApp and AI in one platform for service businesses.",
+    "og": {
+      "description": "Bookings, customers, payments, WhatsApp and AI in one platform for service businesses."
+    },
+    "twitter": {
+      "description": "Bookings, customers, payments, WhatsApp and AI in one platform."
+    }
+  }
 }
