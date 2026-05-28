@@ -8,5 +8,127 @@
     "twitter": {
       "description": "Bookings, customers, payments, WhatsApp and AI in one platform."
     }
+  },
+  "nav": {
+    "producto": "Product",
+    "precios": "Pricing",
+    "empresa": "Company",
+    "aria": {
+      "primary": "Main navigation",
+      "brand": "Acomply — Home",
+      "drawer_open": "Open menu",
+      "drawer_close": "Close menu"
+    },
+    "cta": "Book a free demo"
+  },
+  "hero": {
+    "h1_line1": "Your business,",
+    "h1_line2": "<em>always supported.</em>",
+    "sub": "Acomply supports you so your business flows and grows. Bookings, customers, payments, WhatsApp <amp>and AI</amp> in one platform.",
+    "cta_primary": "Book a free demo",
+    "demo_link": {
+      "title": "See how it works",
+      "sub": "Interactive demo · 2 min"
+    },
+    "trust": {
+      "no_card": "No credit card",
+      "setup_time": "Setup in 15 min",
+      "secure_data": "Secure data"
+    },
+    "wa_card": {
+      "title": "Reminder sent",
+      "body": "WhatsApp reminder sent<br/>to Camila R.",
+      "status_delivered": "Delivered",
+      "time": "10:30 AM"
+    },
+    "ai_card": {
+      "title_line1": "Suggestion from",
+      "title_line2": "your AI Agent",
+      "body": "You have <strong>3 open slots</strong> tomorrow<br/>between <strong>11:00 and 15:00</strong>. Want<br/>to send a campaign to<br/>fill them?",
+      "cta": "Send campaign"
+    }
+  },
+  "footer": {
+    "producto_head": "Product",
+    "empresa_head": "Company",
+    "legal_head": "Legal",
+    "soporte_head": "Support",
+    "links": {
+      "precios": "Pricing",
+      "como_funciona": "How it works",
+      "para_tu_vertical": "By industry",
+      "quienes_somos": "About us",
+      "historias": "Customer stories",
+      "blog": "Blog",
+      "contacto": "Contact",
+      "terminos": "Terms of use",
+      "privacidad": "Privacy policy",
+      "habeas_data": "Habeas Data (Law 1581)",
+      "cookies": "Cookie policy",
+      "ayuda": "Help center",
+      "whatsapp": "WhatsApp",
+      "estado": "System status"
+    },
+    "tagline": "Acomply runs your day-to-day: bookings, customers, payments, WhatsApp and AI in one platform for service businesses.",
+    "copyright": {
+      "entity": "© 2026 Acomply S.A.S.",
+      "nit_status": "Tax ID pending",
+      "rights": "All rights reserved"
+    },
+    "bottom_links": {
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "cookies": "Cookies"
+    },
+    "aria": {
+      "home": "Acomply — Home"
+    }
+  },
+  "closing": {
+    "pill": "We're partners in your growth.",
+    "h1": {
+      "line1": "Book a",
+      "line2_em": "free demo."
+    },
+    "sub": "In 20 minutes we'll show you how your calendar, your booking page, and your AI agents would look with your business's brand. No card, no commitment.",
+    "cta_primary": "Book a free demo",
+    "cta_whatsapp": "Chat on WhatsApp",
+    "micro": "No card · No commitment · Response in under 24 h"
+  },
+  "sticky": {
+    "cta": "Book a free demo"
+  },
+  "cookies_banner": {
+    "aria_label": "Cookie notice",
+    "text": "We use cookies to make the site work and to understand (anonymously) how it's used. <a>Read the policy</a>.",
+    "link_label": "Read the policy",
+    "btn_necessary": "Necessary only",
+    "btn_accept": "Accept"
+  },
+  "demo_modal": {
+    "aria_close": "Close",
+    "success": {
+      "title": "Got it!",
+      "sub": "We'll reach out on WhatsApp within 24 h."
+    },
+    "title": "Book your <em>free demo</em>",
+    "sub": "We'll reach out on WhatsApp within 24 h. No commitment.",
+    "field": {
+      "name_label": "Your name",
+      "name_placeholder": "Andrés Martínez",
+      "whatsapp_label": "WhatsApp",
+      "whatsapp_placeholder": "+57 300 000 0000",
+      "business_label": "Business",
+      "business_label_opt": "(optional)",
+      "business_placeholder": "Alpha Lion Barbería"
+    },
+    "errors": {
+      "validation": "Check your name and WhatsApp number.",
+      "send": "We couldn't send your request. Try again in a moment.",
+      "offline": "Offline. Try again."
+    },
+    "submit_idle": "Book my demo",
+    "submit_loading": "Sending…",
+    "micro": "No card · Response in under 24 h"
   }
 }

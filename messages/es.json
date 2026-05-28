@@ -8,5 +8,127 @@
     "twitter": {
       "description": "Reservas, clientes, pagos, WhatsApp e IA en una sola plataforma."
     }
+  },
+  "nav": {
+    "producto": "Producto",
+    "precios": "Precios",
+    "empresa": "Empresa",
+    "aria": {
+      "primary": "Navegación principal",
+      "brand": "Acomply — Inicio",
+      "drawer_open": "Abrir menú",
+      "drawer_close": "Cerrar menú"
+    },
+    "cta": "Agenda una demo gratis"
+  },
+  "hero": {
+    "h1_line1": "Tu negocio,",
+    "h1_line2": "<em>siempre acompañado.</em>",
+    "sub": "Acomply te acompaña para que tu negocio fluya y crezca. Reservas, clientes, pagos, WhatsApp <amp>e IA</amp> en una sola plataforma.",
+    "cta_primary": "Agenda una demo gratis",
+    "demo_link": {
+      "title": "Ver cómo funciona",
+      "sub": "Demo interactivo · 2 min"
+    },
+    "trust": {
+      "no_card": "Sin tarjeta",
+      "setup_time": "Configuración en 15 min",
+      "secure_data": "Datos seguros"
+    },
+    "wa_card": {
+      "title": "Recordatorio enviado",
+      "body": "Se envio recordatorio por<br/>WhatsApp a Camila R.",
+      "status_delivered": "Entregado",
+      "time": "10:30 a. m."
+    },
+    "ai_card": {
+      "title_line1": "Sugerencia de",
+      "title_line2": "tu Agente IA",
+      "body": "Tienes <strong>3 huecos libres</strong> mañana<br/>entre <strong>11:00 y 15:00</strong>. ¿Quieres<br/>enviar una campaña para<br/>llenarlos?",
+      "cta": "Enviar campaña"
+    }
+  },
+  "footer": {
+    "producto_head": "Producto",
+    "empresa_head": "Empresa",
+    "legal_head": "Legal",
+    "soporte_head": "Soporte",
+    "links": {
+      "precios": "Precios",
+      "como_funciona": "Cómo funciona",
+      "para_tu_vertical": "Para tu vertical",
+      "quienes_somos": "Quiénes somos",
+      "historias": "Historias de clientes",
+      "blog": "Blog",
+      "contacto": "Contacto",
+      "terminos": "Términos de uso",
+      "privacidad": "Política de privacidad",
+      "habeas_data": "Habeas Data (Ley 1581)",
+      "cookies": "Política de cookies",
+      "ayuda": "Centro de ayuda",
+      "whatsapp": "WhatsApp",
+      "estado": "Estado del sistema"
+    },
+    "tagline": "Acomply acompaña tu operación diaria: reservas, clientes, pagos, WhatsApp e IA en una sola plataforma para negocios de servicio.",
+    "copyright": {
+      "entity": "© 2026 Acomply S.A.S.",
+      "nit_status": "NIT en proceso",
+      "rights": "Todos los derechos reservados"
+    },
+    "bottom_links": {
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "cookies": "Cookies"
+    },
+    "aria": {
+      "home": "Acomply — Inicio"
+    }
+  },
+  "closing": {
+    "pill": "Somos aliados de tu crecimiento.",
+    "h1": {
+      "line1": "Agenda una",
+      "line2_em": "demo gratis."
+    },
+    "sub": "En 20 minutos te mostramos cómo se vería tu agenda, tu página de reservas y tus agentes de IA con la marca de tu negocio. Sin tarjeta, sin compromiso.",
+    "cta_primary": "Agenda una demo gratis",
+    "cta_whatsapp": "Habla por WhatsApp",
+    "micro": "Sin tarjeta · Sin compromiso · Respuesta en menos de 24 h"
+  },
+  "sticky": {
+    "cta": "Agenda una demo gratis"
+  },
+  "cookies_banner": {
+    "aria_label": "Aviso de cookies",
+    "text": "Usamos cookies para que la página funcione y para entender (de forma anónima) cómo se usa. <a>Leer la política</a>.",
+    "link_label": "Leer la política",
+    "btn_necessary": "Solo necesarias",
+    "btn_accept": "Aceptar"
+  },
+  "demo_modal": {
+    "aria_close": "Cerrar",
+    "success": {
+      "title": "¡Recibido!",
+      "sub": "Te contactamos por WhatsApp en menos de 24 h."
+    },
+    "title": "Agenda tu <em>demo gratis</em>",
+    "sub": "Te contactamos por WhatsApp en menos de 24 h. Sin compromiso.",
+    "field": {
+      "name_label": "Tu nombre",
+      "name_placeholder": "Andrés Martínez",
+      "whatsapp_label": "WhatsApp",
+      "whatsapp_placeholder": "+57 300 000 0000",
+      "business_label": "Negocio",
+      "business_label_opt": "(opcional)",
+      "business_placeholder": "Alpha Lion Barbería"
+    },
+    "errors": {
+      "validation": "Revisa tu nombre y número de WhatsApp.",
+      "send": "No pudimos enviar tu solicitud. Inténtalo en un momento.",
+      "offline": "Sin conexión. Vuelve a intentar."
+    },
+    "submit_idle": "Agendar mi demo",
+    "submit_loading": "Enviando…",
+    "micro": "Sin tarjeta · Respuesta en menos de 24 h"
   }
 }

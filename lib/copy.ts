@@ -1,10 +1,8 @@
 // [perf-audited 2026-05-16 / typescript-best-practices] audited-clean — no findings
 // Single source of truth for repeated marketing copy + contact endpoints
-// that appear across multiple components. Update here once instead of
-// chasing 5 hardcoded strings.
-
-/** Primary CTA label used across NavBar, Hero, ClosingCTA, StickyMobileCTA. */
-export const CTA_DEMO = "Agenda una demo gratis";
+// that appear across multiple components. Translatable strings now live
+// in messages/{locale}.json via next-intl; only non-translatable
+// constants (URLs, phone numbers) remain here.
 
 /** Anchor target for the demo modal trigger. */
 export const DEMO_HREF = "#demo";

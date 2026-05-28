@@ -6,9 +6,11 @@
    Required asset:
      - closing-cta-bg.webp  (dark bg with coral + teal glows)
    ============================================================ */
+"use client";
 
 import * as React from 'react';
-import { CTA_DEMO, WA_LINK } from '../lib/copy';
+import { useTranslations } from 'next-intl';
+import { WA_LINK } from '../lib/copy';
 import Button from './primitives/Button';
 import SparkleIcon from './primitives/SparkleIcon';
 import CheckIcon from './primitives/icons/CheckIcon';
@@ -23,7 +25,9 @@ const ClosingCTA: React.FC<ClosingCTASectionProps> = ({
   bgSrc = '/assets/closing-cta-bg.webp',
   primaryHref = '#signup',
   whatsappHref = WA_LINK,
-}) => (
+}) => {
+  const t = useTranslations('closing');
+  return (
   <section
     className="ccta"
     style={{ backgroundImage: `url(${bgSrc})` }}
@@ -33,22 +37,21 @@ const ClosingCTA: React.FC<ClosingCTASectionProps> = ({
         <span className="ccta__pill-spark" aria-hidden="true">
           <SparkleIcon size={14} color="currentColor" />
         </span>
-        Somos aliados de tu crecimiento.
+        {t('pill')}
       </span>
 
       <h2 className="ccta__h1">
-        Agenda una<em>demo gratis.</em>
+        {t('h1.line1')}<em>{t('h1.line2_em')}</em>
       </h2>
 
       <p className="ccta__sub">
-        En 20 minutos te mostramos cómo se vería tu agenda, tu página de reservas
-        y tus agentes de IA con la marca de tu negocio. Sin tarjeta, sin compromiso.
+        {t('sub')}
       </p>
 
       <div className="ccta__ctas">
-        <Button variant="primary" size="lg" href={primaryHref}>{CTA_DEMO}</Button>
+        <Button variant="primary" size="lg" href={primaryHref}>{t('cta_primary')}</Button>
         <a className="ccta__btn ccta__btn--secondary" href={whatsappHref}>
-          Habla por WhatsApp
+          {t('cta_whatsapp')}
           <span className="ccta__btn-arrow" aria-hidden="true">→</span>
         </a>
       </div>
@@ -57,7 +60,7 @@ const ClosingCTA: React.FC<ClosingCTASectionProps> = ({
         <span className="ccta__micro-check" aria-hidden="true">
           <CheckIcon strokeWidth={3} />
         </span>
-        Sin tarjeta · Sin compromiso · Respuesta en menos de 24 h
+        {t('micro')}
       </span>
     </div>
 
@@ -240,6 +243,7 @@ const ClosingCTA: React.FC<ClosingCTASectionProps> = ({
       }
     `}</style>
   </section>
-);
+  );
+};
 
 export default ClosingCTA;

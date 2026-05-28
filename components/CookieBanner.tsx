@@ -1,16 +1,18 @@
 "use client";
 
-// Bottom-fixed cookie banner. Spanish, Habeas-Data-friendly. localStorage
-// persistence so it doesn't re-show after a choice. No analytics wired
-// today — banner choice is recorded for when Plausible / Fathom is added.
+// Bottom-fixed cookie banner. Habeas-Data-friendly. localStorage persistence
+// so it doesn't re-show after a choice. No analytics wired today — banner
+// choice is recorded for when Plausible / Fathom is added.
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 const STORAGE_KEY = "acomply-cookie-consent";
 
 type Choice = "accepted" | "necessary";
 
 export default function CookieBanner() {
+  const t = useTranslations("cookies_banner");
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -35,15 +37,16 @@ export default function CookieBanner() {
   if (!visible) return null;
 
   return (
-    <div className="cookie-banner" role="region" aria-label="Aviso de cookies">
+    <div className="cookie-banner" role="region" aria-label={t("aria_label")}>
       <div className="cookie-banner__inner">
         <p className="cookie-banner__text">
-          Usamos cookies para que la página funcione y para entender (de forma
-          anónima) cómo se usa.{" "}
-          <a href="/cookies" className="cookie-banner__link">
-            Leer la política
-          </a>
-          .
+          {t.rich("text", {
+            a: (chunks) => (
+              <a href="/cookies" className="cookie-banner__link">
+                {chunks}
+              </a>
+            ),
+          })}
         </p>
         <div className="cookie-banner__actions">
           <button
@@ -51,14 +54,14 @@ export default function CookieBanner() {
             onClick={() => record("necessary")}
             className="cookie-banner__btn cookie-banner__btn--secondary"
           >
-            Solo necesarias
+            {t("btn_necessary")}
           </button>
           <button
             type="button"
             onClick={() => record("accepted")}
             className="cookie-banner__btn cookie-banner__btn--primary"
           >
-            Aceptar
+            {t("btn_accept")}
           </button>
         </div>
       </div>

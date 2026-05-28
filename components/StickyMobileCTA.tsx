@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { CTA_DEMO, DEMO_HREF } from "../lib/copy";
+import { useTranslations } from "next-intl";
+import { DEMO_HREF } from "../lib/copy";
 import Button from "./primitives/Button";
 
 export default function StickyMobileCTA() {
+  const t = useTranslations("sticky");
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -23,7 +25,7 @@ export default function StickyMobileCTA() {
     <div className={`stickycta${visible ? " is-visible" : ""}`}>
       <div className="stickycta__row">
         <Button variant="primary" href={DEMO_HREF} sparkle>
-          {CTA_DEMO}
+          {t("cta")}
         </Button>
       </div>
     </div>

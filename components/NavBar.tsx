@@ -1,21 +1,24 @@
 // [perf-audited 2026-05-15 / vercel-react-best-practices v1.0 + typescript-best-practices] audited-clean — no findings
 "use client";
 
-import { useEffect, useState } from "react";
-import { CTA_DEMO, DEMO_HREF } from "../lib/copy";
+import { useEffect, useState, type ReactNode } from "react";
+import { useTranslations } from "next-intl";
+import { DEMO_HREF } from "../lib/copy";
 import AcomplyLogo from "./primitives/AcomplyLogo";
-
-const NAV_LINKS: { label: string; href: string; key: string }[] = [
-  { label: "Producto", href: "#producto", key: "producto" },
-  { label: "Mía", href: "#agentes", key: "agentes" },
-  { label: "Precios", href: "#precios", key: "precios" },
-  { label: "Empresa", href: "#empresa", key: "empresa" },
-];
+import MiaWordmark from "./primitives/MiaWordmark";
 
 type Props = { active?: string };
 
 export default function NavBar({ active }: Props) {
+  const t = useTranslations("nav");
   const [open, setOpen] = useState(false);
+
+  const NAV_LINKS: { label: ReactNode; href: string; key: string }[] = [
+    { label: t("producto"), href: "#producto", key: "producto" },
+    { label: <MiaWordmark />, href: "#agentes", key: "agentes" },
+    { label: t("precios"), href: "#precios", key: "precios" },
+    { label: t("empresa"), href: "#empresa", key: "empresa" },
+  ];
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -24,8 +27,8 @@ export default function NavBar({ active }: Props) {
 
   return (
     <header className="acnav">
-      <nav className="acnav__inner container" aria-label="Navegación principal">
-        <a className="acnav__brand" href="#top" aria-label="Acomply — Inicio">
+      <nav className="acnav__inner container" aria-label={t("aria.primary")}>
+        <a className="acnav__brand" href="#top" aria-label={t("aria.brand")}>
           <AcomplyLogo height={56} title="Acomply" />
         </a>
 
@@ -42,12 +45,12 @@ export default function NavBar({ active }: Props) {
         </div>
 
         <a className="acnav__cta" href={DEMO_HREF}>
-          {CTA_DEMO}
+          {t("cta")}
         </a>
 
         <button
           className="acnav__hamburger"
-          aria-label={open ? "Cerrar menú" : "Abrir menú"}
+          aria-label={open ? t("aria.drawer_close") : t("aria.drawer_open")}
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
         >
@@ -72,7 +75,7 @@ export default function NavBar({ active }: Props) {
           <a key={l.key} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
         ))}
         <a className="acnav__drawer-cta" href={DEMO_HREF} onClick={() => setOpen(false)}>
-          {CTA_DEMO}
+          {t("cta")}
         </a>
       </div>
     </header>
