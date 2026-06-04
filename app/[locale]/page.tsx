@@ -69,6 +69,9 @@ function buildJsonLd(locale: string) {
         description: LD_DESCRIPTION[lang],
         slogan: lang === "en" ? "Your business, always accompanied." : "Tu negocio, siempre acompañado.",
         areaServed: { "@type": "Country", name: "Colombia" },
+        // Social profiles — the entity-corroboration signal Google uses to
+        // confirm "Acomply" is a real company (and to source its AI Overview).
+        sameAs: ["https://www.instagram.com/acomply2024/"],
       },
       {
         "@type": "WebSite",
