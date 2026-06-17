@@ -344,51 +344,19 @@
       "name": "Acomply Esencial",
       "sell": "Para una sola persona. Sin sorpresas y sin IA.",
       "period": "/mes · facturación mensual",
-      "cta": "Empieza con Esencial",
-      "features": [
-        "Página de reservas pública",
-        "Recordatorios automáticos por WhatsApp",
-        "Agenda individual",
-        "Reseñas y calificaciones",
-        "Galería de trabajos",
-        "Gestión de clientes"
-      ]
+      "cta": "Empieza con Esencial"
     },
     "tier_maestro": {
       "name": "Acomply Maestro",
       "sell": "Para crecer hasta 5 personas. IA incluida.",
       "period": "/mes · facturación mensual",
-      "cta": "Empieza con Maestro",
-      "features": {
-        "all_esencial": "Todo lo del plan Esencial",
-        "up_to_5": "Hasta 5 profesionales",
-        "section_ai": "IA incluida",
-        "credits_label": "500 mensajes WhatsApp + 200 Looks IA",
-        "credits_note": "Gratis cada mes",
-        "receptionist_label": "Recepcionista IA en WhatsApp",
-        "receptionist_note": "Reserva por ti",
-        "marketing_label": "Marketing IA",
-        "marketing_note": "Genera promos, las envía y atribuye reservas",
-        "analyst_label": "Asistente de análisis",
-        "analyst_note": "Chat con tu negocio",
-        "qr": "QR estilizado con IA",
-        "section_ops": "Operaciones",
-        "expenses": "Control de gastos e ingresos",
-        "reports": "Informes financieros",
-        "inventory": "Manejo de inventario"
-      }
+      "cta": "Empieza con Maestro"
     },
     "tier_elite": {
       "name": "Acomply Élite",
       "sell": "Para equipos sin límite que necesitan más.",
       "period": "/mes · facturación mensual",
-      "cta": "Empieza con Élite",
-      "features": [
-        "Todo lo del plan Maestro",
-        "Profesionales ilimitados",
-        "Soporte prioritario",
-        "Personalización avanzada de marca"
-      ]
+      "cta": "Empieza con Élite"
     }
   },
   "recargas": {
@@ -638,7 +606,7 @@
       "s4": {
         "h2": "4. Suscripción, paquetes y pagos (solo Cliente negocio)",
         "li": [
-          "La suscripción se cobra mensualmente en pesos colombianos (COP). Los planes vigentes son <b>Esencial</b> ($39.900), <b>Maestro</b> ($59.900) y <b>Élite</b> ($79.900). El precio actual y las inclusiones se muestran al momento de contratar.",
+          "La suscripción se cobra mensualmente en pesos colombianos (COP). Los planes vigentes son <b>Esencial</b> ($49.900), <b>Maestro</b> ($79.900) y <b>Élite</b> ($99.900). El precio actual y las inclusiones se muestran al momento de contratar.",
           "Cada plan incluye un cupo mensual de mensajes por WhatsApp y de generaciones de IA. Al alcanzar el cupo el envío se bloquea hasta el inicio del siguiente periodo o hasta que compres un paquete de recargas.",
           "Los paquetes de recargas se cobran como compras únicas y se aplican de inmediato al cupo del mes vigente. No expiran dentro del mes en curso.",
           "Los pagos se procesan a través de Wompi (Bancolombia). Acomply no almacena información de tarjetas; recibimos solo el estado de la transacción.",

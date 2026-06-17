@@ -3,6 +3,7 @@
 // Do not invent decoration here — match the JSX exactly.
 "use client";
 
+import { PRICING } from "@/lib/pricing";
 import SparkleIcon from "./primitives/SparkleIcon";
 import CheckIcon from "./primitives/icons/CheckIcon";
 
@@ -49,7 +50,7 @@ export default function PricingCardDark({
   name = "Acomply Élite",
   italicWord,
   sell = "Para equipos sin límite que necesitan más.",
-  price = "79.900",
+  price = PRICING.elite.displayCop,
   period = "/mes · facturación mensual",
   features = [],
   ctaLabel = "Hablar con ventas",

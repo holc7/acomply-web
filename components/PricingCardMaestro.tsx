@@ -2,7 +2,10 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { PRICING } from "@/lib/pricing";
+import { PLAN_FEATURES, type IconKey } from "@/lib/plans-catalog";
+import { resolveMaestroFeatures } from "@/lib/plans-catalog-resolve";
 import SparkleIcon from "./primitives/SparkleIcon";
 import BarChartIcon from "./primitives/icons/BarChartIcon";
 import ChatBubbleIcon from "./primitives/icons/ChatBubbleIcon";
@@ -10,6 +13,14 @@ import CheckCircleIcon from "./primitives/icons/CheckCircleIcon";
 import GiftIcon from "./primitives/icons/GiftIcon";
 import MegaphoneIcon from "./primitives/icons/MegaphoneIcon";
 import QrIcon from "./primitives/icons/QrIcon";
+
+const ICON_BY_KEY: Record<IconKey, ReactNode> = {
+  gift: <GiftIcon />,
+  chat: <ChatBubbleIcon />,
+  megaphone: <MegaphoneIcon />,
+  barchart: <BarChartIcon />,
+  qr: <QrIcon />,
+};
 
 export type MaestroFeature =
   | { section: string }
@@ -32,7 +43,7 @@ export default function PricingCardMaestro({
   tier,
   name,
   sell,
-  price = "59.900",
+  price = PRICING.maestro.displayCop,
   period,
   badge,
   features,
@@ -42,7 +53,7 @@ export default function PricingCardMaestro({
 }: Props) {
   const t = useTranslations("pricing");
   const tm = useTranslations("pricing.tier_maestro");
-  const tf = useTranslations("pricing.tier_maestro.features");
+  const locale = useLocale();
 
   const resolvedTier = tier ?? t("tier_labels.maestro");
   const resolvedName = name ?? tm("name");
@@ -51,20 +62,14 @@ export default function PricingCardMaestro({
   const resolvedCta = ctaLabel ?? tm("cta");
   const resolvedBadge = badge === undefined ? t("badge_recommended") : badge;
 
-  const defaultFeatures: MaestroFeature[] = [
-    { label: tf("all_esencial") },
-    { label: tf("up_to_5") },
-    { section: tf("section_ai") },
-    { label: tf("credits_label"), note: tf("credits_note"), icon: <GiftIcon /> },
-    { label: tf("receptionist_label"), note: tf("receptionist_note"), icon: <ChatBubbleIcon /> },
-    { label: tf("marketing_label"), note: tf("marketing_note"), icon: <MegaphoneIcon /> },
-    { label: tf("analyst_label"), note: tf("analyst_note"), icon: <BarChartIcon /> },
-    { label: tf("qr"), icon: <QrIcon /> },
-    { section: tf("section_ops") },
-    { label: tf("expenses") },
-    { label: tf("reports") },
-    { label: tf("inventory") },
-  ];
+  const defaultFeatures: MaestroFeature[] = resolveMaestroFeatures(
+    PLAN_FEATURES.maestro,
+    locale,
+  ).map((f) =>
+    "section" in f
+      ? { section: f.section }
+      : { label: f.label, note: f.note, icon: f.icon ? ICON_BY_KEY[f.icon] : undefined },
+  );
 
   const feats = features ?? defaultFeatures;
 

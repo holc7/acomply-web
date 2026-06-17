@@ -344,51 +344,19 @@
       "name": "Acomply Esencial",
       "sell": "For one-person shops. No surprises, no AI.",
       "period": "/mo · billed monthly",
-      "cta": "Start with Esencial",
-      "features": [
-        "Public booking page",
-        "Automatic WhatsApp reminders",
-        "Individual calendar",
-        "Reviews and ratings",
-        "Work gallery",
-        "Customer management"
-      ]
+      "cta": "Start with Esencial"
     },
     "tier_maestro": {
       "name": "Acomply Maestro",
       "sell": "To grow up to 5 people. AI included.",
       "period": "/mo · billed monthly",
-      "cta": "Start with Maestro",
-      "features": {
-        "all_esencial": "Everything in Esencial",
-        "up_to_5": "Up to 5 professionals",
-        "section_ai": "AI included",
-        "credits_label": "500 WhatsApp messages + 200 AI Looks",
-        "credits_note": "Free every month",
-        "receptionist_label": "AI Receptionist on WhatsApp",
-        "receptionist_note": "Books for you",
-        "marketing_label": "Marketing AI",
-        "marketing_note": "Generates promos, sends them, attributes bookings",
-        "analyst_label": "Analyst assistant",
-        "analyst_note": "Chat with your business",
-        "qr": "AI-styled QR code",
-        "section_ops": "Operations",
-        "expenses": "Income & expense tracking",
-        "reports": "Financial reports",
-        "inventory": "Inventory management"
-      }
+      "cta": "Start with Maestro"
     },
     "tier_elite": {
       "name": "Acomply Élite",
       "sell": "For unlimited teams that need more.",
       "period": "/mo · billed monthly",
-      "cta": "Start with Élite",
-      "features": [
-        "Everything in Maestro",
-        "Unlimited professionals",
-        "Priority support",
-        "Advanced brand customization"
-      ]
+      "cta": "Start with Élite"
     }
   },
   "recargas": {
@@ -638,7 +606,7 @@
       "s4": {
         "h2": "4. Subscription, packs, and payments (business Customer only)",
         "li": [
-          "The subscription is billed monthly in Colombian pesos (COP). The current plans are <b>Esencial</b> ($39.900), <b>Maestro</b> ($59.900), and <b>Élite</b> ($79.900). The current price and inclusions are shown at the time of signing up.",
+          "The subscription is billed monthly in Colombian pesos (COP). The current plans are <b>Esencial</b> ($49.900), <b>Maestro</b> ($79.900), and <b>Élite</b> ($99.900). The current price and inclusions are shown at the time of signing up.",
           "Each plan includes a monthly allowance of WhatsApp messages and AI generations. When the allowance is reached, sending is blocked until the start of the next period or until you buy a top-up pack.",
           "Top-up packs are charged as one-time purchases and are applied immediately to the current month's allowance. They do not expire within the current month.",
           "Payments are processed through Wompi (Bancolombia). Acomply does not store card information; we only receive the status of the transaction.",

@@ -1,7 +1,10 @@
 // [perf-audited 2026-05-15 / vercel-react-best-practices v1.0 + typescript-best-practices] audited-clean — no findings
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { PRICING } from "@/lib/pricing";
+import { PLAN_FEATURES } from "@/lib/plans-catalog";
+import { resolveLabelFeatures } from "@/lib/plans-catalog-resolve";
 import CheckCircleIcon from "./primitives/icons/CheckCircleIcon";
 
 type Feature = { label: string };
@@ -22,7 +25,7 @@ export default function PricingCardEsencial({
   tier,
   name,
   sell,
-  price = "39.900",
+  price = PRICING.esencial.displayCop,
   period,
   features,
   ctaLabel,
@@ -31,12 +34,13 @@ export default function PricingCardEsencial({
 }: Props) {
   const t = useTranslations("pricing");
   const te = useTranslations("pricing.tier_esencial");
+  const locale = useLocale();
   const resolvedTier = tier ?? t("tier_labels.esencial");
   const resolvedName = name ?? te("name");
   const resolvedSell = sell ?? te("sell");
   const resolvedPeriod = period ?? te("period");
   const resolvedCta = ctaLabel ?? te("cta");
-  const feats: Feature[] = features ?? (te.raw("features") as string[]).map((label) => ({ label }));
+  const feats: Feature[] = features ?? resolveLabelFeatures(PLAN_FEATURES.esencial, locale);
 
   return (
     <div className={`pce ${className}`}>

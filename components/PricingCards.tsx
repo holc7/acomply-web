@@ -5,7 +5,10 @@
 // the matching card. Plans canonical from acomply-app/lib/plans.ts — do not drift.
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { PRICING } from "@/lib/pricing";
+import { PLAN_FEATURES } from "@/lib/plans-catalog";
+import { resolveLabelFeatures } from "@/lib/plans-catalog-resolve";
 import PricingCardEsencial from "./PricingCardEsencial";
 import PricingCardMaestro from "./PricingCardMaestro";
 import PricingCardDark from "./PricingCardDark";
@@ -28,6 +31,7 @@ export default function PricingCards() {
   const tier = recommendTier(team);
   const t = useTranslations("pricing");
   const tElite = useTranslations("pricing.tier_elite");
+  const locale = useLocale();
 
   const tickIndex = TICK_VALUES.reduce<number>(
     (best, v, i) =>
@@ -49,7 +53,7 @@ export default function PricingCards() {
     tier === "esencial" ? "coral" : tier === "maestro" ? "amber" : "mint"
   }`;
 
-  const eliteFeatures = tElite.raw("features") as string[];
+  const eliteFeatures = resolveLabelFeatures(PLAN_FEATURES.elite, locale);
 
   return (
     <section className="ppage" id="precios">
@@ -133,9 +137,9 @@ export default function PricingCards() {
               tier={t("tier_labels.elite")}
               name={tElite("name")}
               sell={tElite("sell")}
-              price="79.900"
+              price={PRICING.elite.displayCop}
               period={tElite("period")}
-              features={eliteFeatures.map((label) => ({ label }))}
+              features={eliteFeatures}
               accent="mint"
               glowDirection="top-right"
               ctaLabel={tElite("cta")}
