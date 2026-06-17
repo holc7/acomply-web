@@ -31,7 +31,7 @@ export const PLAN_FEATURES: Record<
   ],
   maestro: [
     { label: { es: "Todo lo del plan Esencial", en: "Everything in Esencial" } },
-    { label: { es: "Hasta 5 profesionales", en: "Up to 5 professionals" } },
+    { label: { es: "Hasta 10 profesionales", en: "Up to 10 professionals" } },
     { section: { es: "IA incluida", en: "AI included" } },
     {
       label: {

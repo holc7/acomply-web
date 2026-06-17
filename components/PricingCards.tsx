@@ -22,7 +22,7 @@ const fmtTeamSize = (n: number) => (n >= 10 ? "10+" : String(n));
 
 const recommendTier = (n: number): Tier => {
   if (n <= 1) return "esencial";
-  if (n <= 5) return "maestro";
+  if (n <= 7) return "maestro";
   return "elite";
 };
 
