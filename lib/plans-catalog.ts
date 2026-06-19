@@ -35,8 +35,8 @@ export const PLAN_FEATURES: Record<
     { section: { es: "IA incluida", en: "AI included" } },
     {
       label: {
-        es: "500 mensajes WhatsApp + 200 Looks IA",
-        en: "500 WhatsApp messages + 200 AI Looks",
+        es: "500 mensajes WhatsApp + 50 Looks IA",
+        en: "500 WhatsApp messages + 50 AI Looks",
       },
       note: { es: "Gratis cada mes", en: "Free every month" },
       icon: "gift",
