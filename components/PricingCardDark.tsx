@@ -3,16 +3,37 @@
 // Do not invent decoration here — match the JSX exactly.
 "use client";
 
+import type { ReactNode } from "react";
 import { PRICING } from "@/lib/pricing";
+import type { IconKey } from "@/lib/plans-catalog";
 import SparkleIcon from "./primitives/SparkleIcon";
 import CheckIcon from "./primitives/icons/CheckIcon";
+import BarChartIcon from "./primitives/icons/BarChartIcon";
+import ChatBubbleIcon from "./primitives/icons/ChatBubbleIcon";
+import GiftIcon from "./primitives/icons/GiftIcon";
+import MegaphoneIcon from "./primitives/icons/MegaphoneIcon";
+import QrIcon from "./primitives/icons/QrIcon";
+
+// Same per-feature glyphs Maestro uses, so the Élite list shows meaningful
+// icons (chat / megaphone / qr …) instead of plain checkmarks. Rows without a
+// key fall back to the check, exactly like Maestro.
+const ICON_BY_KEY: Record<IconKey, ReactNode> = {
+  gift: <GiftIcon />,
+  chat: <ChatBubbleIcon />,
+  megaphone: <MegaphoneIcon />,
+  barchart: <BarChartIcon />,
+  qr: <QrIcon />,
+};
 
 type Accent = "mint" | "coral" | "amber";
 type GlowDirection =
   | "right" | "left" | "top" | "bottom"
   | "top-right" | "top-left" | "bottom-right" | "bottom-left";
 
-type Feature = { label: string; note?: string };
+// Accepts the same resolved shape Maestro consumes. Élite is a flat list today
+// (no sections), but accept the section variant defensively and skip it at
+// render — the dark card has no section styling.
+type Feature = { section: string } | { label: string; note?: string; icon?: IconKey };
 
 type Props = {
   tier?: string;
@@ -106,15 +127,20 @@ export default function PricingCardDark({
 
         {features.length > 0 && (
           <ul className="pcd__features">
-            {features.map((f, i) => (
-              <li key={i} className="pcd__feat">
-                <span className="pcd__feat-check"><CheckIcon strokeWidth={2.6} /></span>
-                <span>
-                  {f.label}
-                  {f.note && <span className="pcd__feat-note">{f.note}</span>}
-                </span>
-              </li>
-            ))}
+            {features.map((f, i) => {
+              if ("section" in f) return null; // dark card has no section styling
+              return (
+                <li key={i} className="pcd__feat">
+                  <span className="pcd__feat-check">
+                    {f.icon ? ICON_BY_KEY[f.icon] : <CheckIcon strokeWidth={2.6} />}
+                  </span>
+                  <span>
+                    {f.label}
+                    {f.note && <span className="pcd__feat-note">{f.note}</span>}
+                  </span>
+                </li>
+              );
+            })}
           </ul>
         )}
 

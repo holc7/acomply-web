@@ -8,7 +8,7 @@ import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { PRICING } from "@/lib/pricing";
 import { PLAN_FEATURES } from "@/lib/plans-catalog";
-import { resolveLabelFeatures } from "@/lib/plans-catalog-resolve";
+import { resolveMaestroFeatures } from "@/lib/plans-catalog-resolve";
 import PricingCardEsencial from "./PricingCardEsencial";
 import PricingCardMaestro from "./PricingCardMaestro";
 import PricingCardDark from "./PricingCardDark";
@@ -53,7 +53,7 @@ export default function PricingCards() {
     tier === "esencial" ? "coral" : tier === "maestro" ? "amber" : "mint"
   }`;
 
-  const eliteFeatures = resolveLabelFeatures(PLAN_FEATURES.elite, locale);
+  const eliteFeatures = resolveMaestroFeatures(PLAN_FEATURES.elite, locale);
 
   return (
     <section className="ppage" id="precios">
