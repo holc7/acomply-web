@@ -7,6 +7,9 @@
 /** Anchor target for the demo modal trigger. */
 export const DEMO_HREF = "#demo";
 
+/** Self-serve signup — the app's onboarding wizard (free 14-day trial). */
+export const SIGNUP_HREF = "https://app.acomply.co/empezar";
+
 /**
  * Public WhatsApp business number, raw digits (Colombia +57).
  * NOTE: 573000000000 is the placeholder value used pre-launch — swap to the

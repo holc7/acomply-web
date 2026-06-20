@@ -4,7 +4,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { DEMO_HREF } from "../lib/copy";
+import { DEMO_HREF, SIGNUP_HREF } from "../lib/copy";
 import Button from "./primitives/Button";
 import SparkleIcon from "./primitives/SparkleIcon";
 import WhatsAppIcon from "./primitives/icons/WhatsAppIcon";
@@ -29,7 +29,8 @@ export default function HeroSection() {
           </p>
 
           <div className="hero__ctas">
-            <Button variant="primary" size="lg" href={DEMO_HREF}>{t("cta_primary")}</Button>
+            <Button variant="primary" size="lg" href={SIGNUP_HREF}>{t("cta_start")}</Button>
+            <Button variant="secondary" size="lg" href={DEMO_HREF}>{t("cta_primary")}</Button>
             <a className="hero__demo-link" href="#agentes">
               <span className="hero__demo-play" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">

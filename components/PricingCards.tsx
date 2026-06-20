@@ -7,6 +7,7 @@
 import { useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { PRICING } from "@/lib/pricing";
+import { SIGNUP_HREF } from "@/lib/copy";
 import { PLAN_FEATURES } from "@/lib/plans-catalog";
 import { resolveMaestroFeatures } from "@/lib/plans-catalog-resolve";
 import PricingCardEsencial from "./PricingCardEsencial";
@@ -128,10 +129,12 @@ export default function PricingCards() {
           <div className="prow">
             <PricingCardEsencial
               className={tier === "esencial" ? "is-recommended" : ""}
+              ctaHref={SIGNUP_HREF}
             />
             <PricingCardMaestro
               className={tier === "maestro" ? "is-recommended" : ""}
               badge={tier === "maestro" ? t("badge_recommended_for_you") : t("badge_recommended")}
+              ctaHref={SIGNUP_HREF}
             />
             <PricingCardDark
               tier={t("tier_labels.elite")}
@@ -143,7 +146,7 @@ export default function PricingCards() {
               accent="mint"
               glowDirection="top-right"
               ctaLabel={tElite("cta")}
-              ctaHref="#demo"
+              ctaHref={SIGNUP_HREF}
               className={tier === "elite" ? "is-recommended" : ""}
             />
           </div>
