@@ -28,6 +28,9 @@ export const PLAN_FEATURES: Record<
     { label: { es: "Agenda individual", en: "Individual calendar" } },
     { label: { es: "Reseñas y calificaciones", en: "Reviews and ratings" } },
     { label: { es: "Gestión de clientes", en: "Customer management" } },
+    { label: { es: "Control de gastos e ingresos", en: "Income & expense tracking" } },
+    { label: { es: "Informes financieros", en: "Financial reports" } },
+    { label: { es: "Manejo de inventario", en: "Inventory management" } },
   ],
   maestro: [
     { label: { es: "Todo lo del plan Esencial", en: "Everything in Esencial" } },
@@ -50,19 +53,10 @@ export const PLAN_FEATURES: Record<
       icon: "chat",
     },
     {
-      label: { es: "Asistente de análisis", en: "Analyst assistant" },
-      note: { es: "Chat con tu negocio", en: "Chat with your business" },
-      icon: "barchart",
+      label: { es: "Código QR para tu local", en: "QR code for your shop" },
+      note: { es: "Para reservas", en: "For bookings" },
+      icon: "qr",
     },
-    { section: { es: "Operaciones", en: "Operations" } },
-    {
-      label: {
-        es: "Control de gastos e ingresos",
-        en: "Income & expense tracking",
-      },
-    },
-    { label: { es: "Informes financieros", en: "Financial reports" } },
-    { label: { es: "Manejo de inventario", en: "Inventory management" } },
   ],
   elite: [
     { label: { es: "Todo lo del plan Maestro", en: "Everything in Maestro" } },
@@ -76,6 +70,11 @@ export const PLAN_FEATURES: Record<
       label: { es: "Mía: agente administrativo IA", en: "Mía: AI admin agent" },
       note: { es: "Gestiona tu negocio por chat", en: "Run your business by chat" },
       icon: "chat",
+    },
+    {
+      label: { es: "Asistente de análisis", en: "Analyst assistant" },
+      note: { es: "Chat con tu negocio", en: "Chat with your business" },
+      icon: "barchart",
     },
     {
       label: { es: "Marketing IA", en: "Marketing AI" },
